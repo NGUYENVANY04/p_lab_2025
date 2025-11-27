@@ -1,0 +1,16 @@
+[
+  {
+    "id": "29019333",
+    "bank_brand_name": "BIDV",
+    "account_number": "8870380330",
+    "transaction_date": "2025-11-04 19:37:28",
+    "amount_out": "0.00",
+    "amount_in": "5000.00",
+    "accumulated": "0.00",
+    "transaction_content": "23021273 FT25308257295005",
+    "reference_number": "57ce3b01-73bb-49c0-8604-20200d4aa715",
+    "code": null,
+    "sub_account": "96247HOAT0205",
+    "bank_account_id": "31960"
+  }
+]
