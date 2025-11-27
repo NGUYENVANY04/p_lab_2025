@@ -1,0 +1,22 @@
+[1/9] Performing build step for 'bootloader'
+[1/1] cmd.exe /C "cd /D C:\Users\vukho\Desktop\RFID_NFC\build\bootloader\esp-idf\esptool_py && C:\Espressif\python_env\idf5.3_py3.11_env\Scripts\python.exe C:/Espressif/frameworks/esp-idf-v5.3.1/components/partition_table/check_sizes.py --offset 0x8000 bootloader 0x1000 C:/Users/vukho/Desktop/RFID_NFC/build/bootloader/bootloader.bin"
+Bootloader binary size 0x6880 bytes. 0x780 bytes (7%) free.
+[2/7] Building C object esp-idf/main/CMakeFiles/__idf_main.dir/main.c.obj
+C:/Users/vukho/Desktop/RFID_NFC/main/main.c: In function 'app_main':
+C:/Users/vukho/Desktop/RFID_NFC/main/main.c:30:12: warning: unused variable 'uid_len' [-Wunused-variable]
+   30 |     size_t uid_len;
+      |            ^~~~~~~
+C:/Users/vukho/Desktop/RFID_NFC/main/main.c:29:13: warning: unused variable 'uid' [-Wunused-variable]
+   29 |     uint8_t uid[10];
+      |             ^~~
+[3/7] Linking C static library esp-idf\main\libmain.a
+[4/7] Generating ld/sections.ld
+[5/7] Linking CXX executable RFID_NFC.elf
+[6/7] Generating binary image from built executable
+esptool.py v4.8.1
+Creating esp32 image...
+Merged 2 ELF sections
+Successfully created esp32 image.
+Generated C:/Users/vukho/Desktop/RFID_NFC/build/RFID_NFC.bin
+[7/7] cmd.exe /C "cd /D C:\Users\vukho\Desktop\RFID_NFC\build\esp-idf\esptool_py && C:\Espressif\python_env\idf5.3_py3.11_env\Scripts\python.exe C:/Espressif/frameworks/esp-idf-v5.3.1/components/partition_table/check_sizes.py --offset 0x8000 partition --type app C:/Users/vukho/Desktop/RFID_NFC/build/partition_table/partition-table.bin C:/Users/vukho/Desktop/RFID_NFC/build/RFID_NFC.bin"
+RFID_NFC.bin binary size 0x3a6c0 bytes. Smallest app partition is 0x100000 bytes. 0xc5940 bytes (77%) free.

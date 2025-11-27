@@ -1,0 +1,30 @@
+[0;33m--- Warning: GDB cannot open serial ports accessed as COMx[0m
+[0;33m--- Using \\.\COM5 instead...[0m
+[0;33m--- esp-idf-monitor 1.5.0 on \\.\COM5 115200[0m
+[0;33m--- Quit: Ctrl+] | Menu: Ctrl+T | Help: Ctrl+T followed by Ctrl+H[0m
+[0;33m--- 0x40080400: _init at ??:?
+[0m
+[0;33m--- 0x400915af: block_link_next at C:/Espressif/frameworks/esp-idf-v5.3.1/components/heap/tlsf/tlsf_block_functions.h:102
+ (inlined by) block_mark_as_free at C:/Espressif/frameworks/esp-idf-v5.3.1/components/heap/tlsf/tlsf_block_functions.h:109
+ (inlined by) tlsf_free at C:/Espressif/frameworks/esp-idf-v5.3.1/components/heap/tlsf/tlsf.c:1202
+[0m
+[0;33m--- 0x4000c2e0: memcpy in ROM
+0x4000c2f6: memcpy in ROM
+[0m
+[0;33m--- 0x400915ac: block_next at C:/Espressif/frameworks/esp-idf-v5.3.1/components/heap/tlsf/tlsf_block_functions.h:94 (discriminator 1)
+ (inlined by) block_link_next at C:/Espressif/frameworks/esp-idf-v5.3.1/components/heap/tlsf/tlsf_block_functions.h:101 (discriminator 1)
+ (inlined by) block_mark_as_free at C:/Espressif/frameworks/esp-idf-v5.3.1/components/heap/tlsf/tlsf_block_functions.h:109 (discriminator 1)
+ (inlined by) tlsf_free at C:/Espressif/frameworks/esp-idf-v5.3.1/components/heap/tlsf/tlsf.c:1202 (discriminator 1)
+0x40091410: multi_heap_free_impl at C:/Espressif/frameworks/esp-idf-v5.3.1/components/heap/multi_heap.c:235
+0x400824c6: heap_caps_free at C:/Espressif/frameworks/esp-idf-v5.3.1/components/heap/heap_caps_base.c:70
+0x400941d5: free at C:/Espressif/frameworks/esp-idf-v5.3.1/components/newlib/heap.c:39
+0x400e5c30: esp_http_client_cleanup at C:/Espressif/frameworks/esp-idf-v5.3.1/components/esp_http_client/esp_http_client.c:933
+0x400d8acf: http_send_card_data at C:/Users/vukho/Desktop/RFID_NFC/main/http_client.c:330
+0x400d7dfa: CreateCard at C:/Users/vukho/Desktop/RFID_NFC/main/main.c:145
+0x400d81ce: app_main at C:/Users/vukho/Desktop/RFID_NFC/main/main.c:313
+0x401769b7: main_task at C:/Espressif/frameworks/esp-idf-v5.3.1/components/freertos/app_startup.c:208
+0x4008c51d: vPortTaskWrapper at C:/Espressif/frameworks/esp-idf-v5.3.1/components/freertos/FreeRTOS-Kernel/portable/xtensa/port.c:134
+[0m
+[0;33m--- 0x40080400: _init at ??:?
+[0m
+[0m

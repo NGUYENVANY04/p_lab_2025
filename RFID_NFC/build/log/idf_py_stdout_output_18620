@@ -1,0 +1,129 @@
+ets Jul 29 2019 12:21:46
+
+rst:0x1 (POWERON_RESET),boot:0x13 (SPI_FAST_FLASH_BOOT)
+configsip: 0, SPIWP:0xee
+clk_drv:0x00,q_drv:0x00,d_drv:0x00,cs0_drv:0x00,hd_drv:0x00,wp_drv:0x00
+mode:DIO, clock div:2
+load:0x3fff0030,len:7176
+load:0x40078000,len:15564
+ho 0 tail 12 room 4
+load:0x40080400,len:4
+load:0x40080404,len:3904
+entry 0x40080640
+[0;32mI (31) boot: ESP-IDF v5.3.1-dirty 2nd stage bootloader[0m
+[0;32mI (31) boot: compile time Nov 27 2025 11:15:13[0m
+[0;32mI (31) boot: Multicore bootloader[0m
+[0;32mI (36) boot: chip revision: v3.1[0m
+[0;32mI (40) boot.esp32: SPI Speed      : 40MHz[0m
+[0;32mI (44) boot.esp32: SPI Mode       : DIO[0m
+[0;32mI (49) boot.esp32: SPI Flash Size : 2MB[0m
+[0;32mI (53) boot: Enabling RNG early entropy source...[0m
+[0;32mI (59) boot: Partition Table:[0m
+[0;32mI (62) boot: ## Label            Usage          Type ST Offset   Length[0m
+[0;32mI (70) boot:  0 nvs              WiFi data        01 02 00009000 00006000[0m
+[0;32mI (77) boot:  1 phy_init         RF data          01 01 0000f000 00001000[0m
+[0;32mI (85) boot:  2 factory          factory app      00 00 00010000 00100000[0m
+[0;32mI (92) boot: End of partition table[0m
+[0;32mI (96) esp_image: segment 0: paddr=00010020 vaddr=3f400020 size=282b0h (164528) map[0m
+[0;32mI (161) esp_image: segment 1: paddr=000382d8 vaddr=3ffb0000 size=04098h ( 16536) load[0m
+[0;32mI (168) esp_image: segment 2: paddr=0003c378 vaddr=40080000 size=03ca0h ( 15520) load[0m
+[0;32mI (174) esp_image: segment 3: paddr=00040020 vaddr=400d0020 size=a2134h (663860) map[0m
+[0;32mI (403) esp_image: segment 4: paddr=000e215c vaddr=40083ca0 size=165e8h ( 91624) load[0m
+[0;32mI (452) boot: Loaded app from partition at offset 0x10000[0m
+[0;32mI (452) boot: Disabling RNG early entropy source...[0m
+[0;32mI (464) cpu_start: Multicore app[0m
+[0;32mI (472) cpu_start: Pro cpu start user code[0m
+[0;32mI (473) cpu_start: cpu freq: 160000000 Hz[0m
+[0;32mI (473) app_init: Application information:[0m
+[0;32mI (475) app_init: Project name:     RFID_NFC[0m
+[0;32mI (480) app_init: App version:      1[0m
+[0;32mI (485) app_init: Compile time:     Nov 27 2025 11:15:03[0m
+[0;32mI (491) app_init: ELF file SHA256:  65a508828...[0m
+[0;32mI (496) app_init: ESP-IDF:          v5.3.1-dirty[0m
+[0;32mI (501) efuse_init: Min chip rev:     v0.0[0m
+[0;32mI (506) efuse_init: Max chip rev:     v3.99 [0m
+[0;32mI (511) efuse_init: Chip rev:         v3.1[0m
+[0;32mI (516) heap_init: Initializing. RAM available for dynamic allocation:[0m
+[0;32mI (523) heap_init: At 3FFAE6E0 len 00001920 (6 KiB): DRAM[0m
+[0;32mI (529) heap_init: At 3FFB8910 len 000276F0 (157 KiB): DRAM[0m
+[0;32mI (535) heap_init: At 3FFE0440 len 00003AE0 (14 KiB): D/IRAM[0m
+[0;32mI (542) heap_init: At 3FFE4350 len 0001BCB0 (111 KiB): D/IRAM[0m
+[0;32mI (548) heap_init: At 4009A288 len 00005D78 (23 KiB): IRAM[0m
+[0;32mI (556) spi_flash: detected chip: generic[0m
+[0;32mI (559) spi_flash: flash io: dio[0m
+[0;33mW (563) spi_flash: Detected size(4096k) larger than the size in the binary image header(2048k). Using the size in the binary image header.[0m
+[0;33mW (576) i2c: This driver is an old driver, please migrate your application code to adapt `driver/i2c_master.h`[0m
+[0;32mI (588) main_task: Started on CPU0[0m
+[0;32mI (598) main_task: Calling app_main()[0m
+[0;32mI (598) RFID_NFC: Starting RFID NFC application...[0m
+[0;32mI (598) RFID_READER: Initializing MFRC522...[0m
+[0;32mI (598) gpio: GPIO[17]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+[0;32mI (648) RFID_READER: MFRC522 Version: 0xB2 (expected 0x91 or 0x92)[0m
+[0;33mW (648) RFID_READER: Unknown version, but may still work[0m
+[0;32mI (648) KEYPAD: Initializing 4x3 keypad...[0m
+[0;32mI (648) gpio: GPIO[12]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+[0;32mI (658) gpio: GPIO[13]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+[0;32mI (668) gpio: GPIO[14]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+[0;32mI (678) gpio: GPIO[15]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+[0;32mI (688) gpio: GPIO[25]| InputEn: 1| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (698) gpio: GPIO[26]| InputEn: 1| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (708) gpio: GPIO[27]| InputEn: 1| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (718) KEYPAD: Keypad initialized[0m
+[0;32mI (718) KEYPAD:   Rows: 12, 13, 14, 15[0m
+[0;32mI (728) KEYPAD:   Cols: 25, 26, 27[0m
+[0;32mI (728) LCD_I2C: Initializing LCD 16x2 at address 0x27...[0m
+[0;32mI (738) LCD_I2C: I2C initialized (SDA=21, SCL=22)[0m
+[0;32mI (868) LCD_I2C: LCD initialized successfully[0m
+[0;32mI (918) HTTP_CLIENT: Initializing HTTP client...[0m
+[0;32mI (948) HTTP_CLIENT: ESP_WIFI_MODE_STA[0m
+[0;32mI (948) HTTP_CLIENT: WiFi connection attempt 1/10[0m
+[0;32mI (958) wifi:wifi driver task: 3ffc200c, prio:23, stack:6656, core=0[0m
+[0;32mI (968) wifi:wifi firmware version: ccaebfa[0m
+[0;32mI (968) wifi:wifi certification version: v7.0[0m
+[0;32mI (968) wifi:config NVS flash: enabled[0m
+[0;32mI (968) wifi:config nano formating: disabled[0m
+[0;32mI (978) wifi:Init data frame dynamic rx buffer num: 32[0m
+[0;32mI (978) wifi:Init static rx mgmt buffer num: 5[0m
+[0;32mI (988) wifi:Init management short buffer num: 32[0m
+[0;32mI (988) wifi:Init dynamic tx buffer num: 32[0m
+[0;32mI (998) wifi:Init static rx buffer size: 1600[0m
+[0;32mI (998) wifi:Init static rx buffer num: 10[0m
+[0;32mI (998) wifi:Init dynamic rx buffer num: 32[0m
+[0;32mI (1008) wifi_init: rx ba win: 6[0m
+[0;32mI (1008) wifi_init: accept mbox: 6[0m
+[0;32mI (1008) wifi_init: tcpip mbox: 32[0m
+[0;32mI (1018) wifi_init: udp mbox: 6[0m
+[0;32mI (1018) wifi_init: tcp mbox: 6[0m
+[0;32mI (1028) wifi_init: tcp tx win: 5760[0m
+[0;32mI (1028) wifi_init: tcp rx win: 5760[0m
+[0;32mI (1028) wifi_init: tcp mss: 1440[0m
+[0;32mI (1038) wifi_init: WiFi IRAM OP enabled[0m
+[0;32mI (1038) wifi_init: WiFi RX IRAM OP enabled[0m
+[0;32mI (1048) phy_init: phy_version 4830,54550f7,Jun 20 2024,14:22:08[0m
+[0;32mI (1138) wifi:mode : sta (14:08:08:ab:a4:6c)[0m
+[0;32mI (1138) wifi:enable tsf[0m
+[0;32mI (1138) HTTP_CLIENT: wifi_init_sta finished.[0m
+[0;32mI (1138) HTTP_CLIENT: Starting WiFi connection...[0m
+[0;32mI (1158) wifi:new:<5,0>, old:<1,0>, ap:<255,255>, sta:<5,0>, prof:1, snd_ch_cfg:0x0[0m
+[0;32mI (1158) wifi:state: init -> auth (0xb0)[0m
+[0;32mI (2158) wifi:state: auth -> init (0x200)[0m
+[0;32mI (2168) wifi:new:<5,0>, old:<5,0>, ap:<255,255>, sta:<5,0>, prof:1, snd_ch_cfg:0x0[0m
+[0;33mW (2168) HTTP_CLIENT: Retry to connect to the AP (attempt 1/5)[0m
+[0;33mW (4588) HTTP_CLIENT: Retry to connect to the AP (attempt 2/5)[0m
+[0;32mI (4588) wifi:new:<5,0>, old:<5,0>, ap:<255,255>, sta:<5,0>, prof:1, snd_ch_cfg:0x0[0m
+[0;32mI (4598) wifi:state: init -> auth (0xb0)[0m
+[0;32mI (4608) wifi:state: auth -> assoc (0x0)[0m
+[0;32mI (4628) wifi:state: assoc -> run (0x10)[0m
+[0;32mI (4658) wifi:connected with P-503, aid = 3, channel 5, BW20, bssid = 20:87:ec:3a:f4:14[0m
+[0;32mI (4658) wifi:security: WPA2-PSK, phy: bgn, rssi: -53[0m
+[0;32mI (4668) wifi:pm start, type: 1[0m
+
+[0;32mI (4668) wifi:dp: 1, bi: 102400, li: 3, scale listen interval from 307200 us to 307200 us[0m
+[0;32mI (4738) wifi:AP's beacon interval = 102400 us, DTIM period = 1[0m
+[0;32mI (7678) esp_netif_handlers: sta ip: 192.168.101.48, mask: 255.255.255.0, gw: 192.168.101.1[0m
+[0;32mI (7678) HTTP_CLIENT: Got IP Address: 192.168.101.48[0m
+[0;32mI (7678) HTTP_CLIENT: ========================================[0m
+[0;32mI (7688) HTTP_CLIENT: WiFi CONNECTED SUCCESSFULLY![0m
+[0;32mI (7688) HTTP_CLIENT: SSID: P-503[0m
+[0;32mI (7698) HTTP_CLIENT: ========================================[0m
+[0;32mI (7698) HTTP_CLIENT: HTTP client initialized successfully[0m

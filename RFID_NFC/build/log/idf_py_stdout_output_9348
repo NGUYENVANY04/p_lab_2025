@@ -1,0 +1,188 @@
+ets Jul 29 2019 12:21:46
+
+rst:0x1 (POWERON_RESET),boot:0x13 (SPI_FAST_FLASH_BOOT)
+configsip: 0, SPIWP:0xee
+clk_drv:0x00,q_drv:0x00,d_drv:0x00,cs0_drv:0x00,hd_drv:0x00,wp_drv:0x00
+mode:DIO, clock div:2
+load:0x3fff0030,len:7176
+load:0x40078000,len:15564
+ho 0 tail 12 room 4
+load:0x40080400,len:4
+load:0x40080404,len:3904
+entry 0x40080640
+[0;32mI (31) boot: ESP-IDF v5.3.1-dirty 2nd stage bootloader[0m
+[0;32mI (31) boot: compile time Nov 27 2025 01:28:47[0m
+[0;32mI (31) boot: Multicore bootloader[0m
+[0;32mI (36) boot: chip revision: v3.1[0m
+[0;32mI (40) boot.esp32: SPI Speed      : 40MHz[0m
+[0;32mI (44) boot.esp32: SPI Mode       : DIO[0m
+[0;32mI (49) boot.esp32: SPI Flash Size : 2MB[0m
+[0;32mI (53) boot: Enabling RNG early entropy source...[0m
+[0;32mI (59) boot: Partition Table:[0m
+[0;32mI (62) boot: ## Label            Usage          Type ST Offset   Length[0m
+[0;32mI (70) boot:  0 nvs              WiFi data        01 02 00009000 00006000[0m
+[0;32mI (77) boot:  1 phy_init         RF data          01 01 0000f000 00001000[0m
+[0;32mI (85) boot:  2 factory          factory app      00 00 00010000 00100000[0m
+[0;32mI (92) boot: End of partition table[0m
+[0;32mI (96) esp_image: segment 0: paddr=00010020 vaddr=3f400020 size=0b424h ( 46116) map[0m
+[0;32mI (121) esp_image: segment 1: paddr=0001b44c vaddr=3ffb0000 size=02478h (  9336) load[0m
+[0;32mI (124) esp_image: segment 2: paddr=0001d8cc vaddr=40080000 size=0274ch ( 10060) load[0m
+[0;32mI (130) esp_image: segment 3: paddr=00020020 vaddr=400d0020 size=164bch ( 91324) map[0m
+[0;32mI (166) esp_image: segment 4: paddr=000364e4 vaddr=4008274c size=0bca4h ( 48292) load[0m
+[0;32mI (193) boot: Loaded app from partition at offset 0x10000[0m
+[0;32mI (193) boot: Disabling RNG early entropy source...[0m
+[0;32mI (205) cpu_start: Multicore app[0m
+[0;32mI (213) cpu_start: Pro cpu start user code[0m
+[0;32mI (213) cpu_start: cpu freq: 160000000 Hz[0m
+[0;32mI (213) app_init: Application information:[0m
+[0;32mI (216) app_init: Project name:     RFID_NFC[0m
+[0;32mI (221) app_init: App version:      1[0m
+[0;32mI (225) app_init: Compile time:     Nov 27 2025 01:28:29[0m
+[0;32mI (231) app_init: ELF file SHA256:  eae4c387b...[0m
+[0;32mI (236) app_init: ESP-IDF:          v5.3.1-dirty[0m
+[0;32mI (242) efuse_init: Min chip rev:     v0.0[0m
+[0;32mI (246) efuse_init: Max chip rev:     v3.99 [0m
+[0;32mI (251) efuse_init: Chip rev:         v3.1[0m
+[0;32mI (257) heap_init: Initializing. RAM available for dynamic allocation:[0m
+[0;32mI (264) heap_init: At 3FFAE6E0 len 00001920 (6 KiB): DRAM[0m
+[0;32mI (270) heap_init: At 3FFB2D70 len 0002D290 (180 KiB): DRAM[0m
+[0;32mI (276) heap_init: At 3FFE0440 len 00003AE0 (14 KiB): D/IRAM[0m
+[0;32mI (282) heap_init: At 3FFE4350 len 0001BCB0 (111 KiB): D/IRAM[0m
+[0;32mI (289) heap_init: At 4008E3F0 len 00011C10 (71 KiB): IRAM[0m
+[0;32mI (296) spi_flash: detected chip: generic[0m
+[0;32mI (299) spi_flash: flash io: dio[0m
+[0;33mW (303) spi_flash: Detected size(4096k) larger than the size in the binary image header(2048k). Using the size in the binary image header.[0m
+[0;32mI (317) main_task: Started on CPU0[0m
+[0;32mI (327) main_task: Calling app_main()[0m
+[0;32mI (327) RFID_NFC: Starting RFID NFC application...[0m
+[0;32mI (327) RFID_READER: Initializing MFRC522...[0m
+[0;32mI (327) RFID_READER: SPI bus initialized on SPI3_HOST (VSPI)[0m
+[0;32mI (337) RFID_READER: SPI device added[0m
+[0;32mI (487) RFID_READER: MFRC522 version: 0xB2 (should be 0x91 or 0x92)[0m
+[0;32mI (487) RFID_READER: MFRC522 initialized[0m
+[0;32mI (487) RFID_READER: === Testing SPI communication ===[0m
+[0;32mI (487) RFID_READER: Version: 0xB2 [Unknown][0m
+[0;32mI (497) RFID_READER: Testing write/read cycle...[0m
+[0;32mI (497) RFID_READER: Write 0xAA, Read back: 0xAA [OK][0m
+[0;32mI (507) RFID_READER: CommandReg: 0x20[0m
+[0;32mI (507) RFID_READER: TxControlReg: 0x83 (should be 0x83 with antenna on)[0m
+[0;32mI (517) RFID_READER: FIFO Level: 0x00[0m
+[0;32mI (517) RFID_READER: === End of SPI test ===[0m
+[0;32mI (527) RFID_NFC: Scanning for cards...[0m
+[0;32mI (527) RFID_READER: Sending WUPA...[0m
+[0;33mW (727) RFID_READER: Timeout! IRQ=0x44, CommandReg=0x0C[0m
+[0;33mW (727) RFID_READER: Command still active - possible hardware issue[0m
+[0;32mI (1227) RFID_NFC: Scanning for cards...[0m
+[0;32mI (1227) RFID_READER: Sending WUPA...[0m
+[0;33mW (1407) RFID_READER: Timeout! IRQ=0x46, CommandReg=0x0C[0m
+[0;33mW (1407) RFID_READER: Command still active - possible hardware issue[0m
+[0;32mI (1917) RFID_NFC: Scanning for cards...[0m
+[0;32mI (1917) RFID_READER: Sending WUPA...[0m
+[0;33mW (2097) RFID_READER: Timeout! IRQ=0x46, CommandReg=0x0C[0m
+[0;33mW (2097) RFID_READER: Command still active - possible hardware issue[0m
+[0;32mI (2607) RFID_NFC: Scanning for cards...[0m
+[0;32mI (2607) RFID_READER: Sending WUPA...[0m
+[0;33mW (2787) RFID_READER: Timeout! IRQ=0x46, CommandReg=0x0C[0m
+[0;33mW (2787) RFID_READER: Command still active - possible hardware issue[0m
+[0;32mI (3297) RFID_NFC: Scanning for cards...[0m
+[0;32mI (3297) RFID_READER: Sending WUPA...[0m
+[0;33mW (3477) RFID_READER: Timeout! IRQ=0x46, CommandReg=0x0C[0m
+[0;33mW (3477) RFID_READER: Command still active - possible hardware issue[0m
+[0;32mI (3987) RFID_NFC: Scanning for cards...[0m
+[0;32mI (3987) RFID_READER: Sending WUPA...[0m
+[0;33mW (4167) RFID_READER: Timeout! IRQ=0x46, CommandReg=0x0C[0m
+[0;33mW (4167) RFID_READER: Command still active - possible hardware issue[0m
+[0;32mI (4677) RFID_NFC: Scanning for cards...[0m
+[0;32mI (4677) RFID_READER: Sending WUPA...[0m
+[0;33mW (4857) RFID_READER: Timeout! IRQ=0x46, CommandReg=0x0C[0m
+[0;33mW (4857) RFID_READER: Command still active - possible hardware issue[0m
+[0;32mI (5367) RFID_NFC: Scanning for cards...[0m
+[0;32mI (5367) RFID_READER: Sending WUPA...[0m
+[0;33mW (5547) RFID_READER: Timeout! IRQ=0x46, CommandReg=0x0C[0m
+[0;33mW (5547) RFID_READER: Command still active - possible hardware issue[0m
+[0;32mI (6057) RFID_NFC: Scanning for cards...[0m
+[0;32mI (6057) RFID_READER: Sending WUPA...[0m
+[0;33mW (6237) RFID_READER: Timeout! IRQ=0x46, CommandReg=0x0C[0m
+[0;33mW (6237) RFID_READER: Command still active - possible hardware issue[0m
+[0;32mI (6747) RFID_NFC: Scanning for cards...[0m
+[0;32mI (6747) RFID_READER: Sending WUPA...[0m
+[0;33mW (6927) RFID_READER: Timeout! IRQ=0x46, CommandReg=0x0C[0m
+[0;33mW (6927) RFID_READER: Command still active - possible hardware issue[0m
+[0;32mI (7437) RFID_NFC: Scanning for cards...[0m
+[0;32mI (7437) RFID_READER: Sending WUPA...[0m
+[0;33mW (7617) RFID_READER: Timeout! IRQ=0x46, CommandReg=0x0C[0m
+[0;33mW (7617) RFID_READER: Command still active - possible hardware issue[0m
+[0;32mI (8127) RFID_NFC: Scanning for cards...[0m
+[0;32mI (8127) RFID_READER: Sending WUPA...[0m
+[0;33mW (8307) RFID_READER: Timeout! IRQ=0x46, CommandReg=0x0C[0m
+[0;33mW (8307) RFID_READER: Command still active - possible hardware issue[0m
+[0;32mI (8817) RFID_NFC: Scanning for cards...[0m
+[0;32mI (8817) RFID_READER: Sending WUPA...[0m
+[0;33mW (8997) RFID_READER: Timeout! IRQ=0x46, CommandReg=0x0C[0m
+[0;33mW (8997) RFID_READER: Command still active - possible hardware issue[0m
+[0;32mI (9507) RFID_NFC: Scanning for cards...[0m
+[0;32mI (9507) RFID_READER: Sending WUPA...[0m
+[0;33mW (9687) RFID_READER: Timeout! IRQ=0x46, CommandReg=0x0C[0m
+[0;33mW (9687) RFID_READER: Command still active - possible hardware issue[0m
+[0;32mI (10197) RFID_NFC: Scanning for cards...[0m
+[0;32mI (10197) RFID_READER: Sending WUPA...[0m
+[0;33mW (10377) RFID_READER: Timeout! IRQ=0x46, CommandReg=0x0C[0m
+[0;33mW (10377) RFID_READER: Command still active - possible hardware issue[0m
+[0;32mI (10887) RFID_NFC: Scanning for cards...[0m
+[0;32mI (10887) RFID_READER: Sending WUPA...[0m
+[0;33mW (11067) RFID_READER: Timeout! IRQ=0x46, CommandReg=0x0C[0m
+[0;33mW (11067) RFID_READER: Command still active - possible hardware issue[0m
+[0;32mI (11577) RFID_NFC: Scanning for cards...[0m
+[0;32mI (11577) RFID_READER: Sending WUPA...[0m
+[0;33mW (11757) RFID_READER: Timeout! IRQ=0x46, CommandReg=0x0C[0m
+[0;33mW (11757) RFID_READER: Command still active - possible hardware issue[0m
+[0;32mI (12267) RFID_NFC: Scanning for cards...[0m
+[0;32mI (12267) RFID_READER: Sending WUPA...[0m
+[0;33mW (12447) RFID_READER: Timeout! IRQ=0x46, CommandReg=0x0C[0m
+[0;33mW (12447) RFID_READER: Command still active - possible hardware issue[0m
+[0;32mI (12957) RFID_NFC: Scanning for cards...[0m
+[0;32mI (12957) RFID_READER: Sending WUPA...[0m
+[0;33mW (13137) RFID_READER: Timeout! IRQ=0x46, CommandReg=0x0C[0m
+[0;33mW (13137) RFID_READER: Command still active - possible hardware issue[0m
+[0;32mI (13647) RFID_NFC: Scanning for cards...[0m
+[0;32mI (13647) RFID_READER: Sending WUPA...[0m
+[0;33mW (13827) RFID_READER: Timeout! IRQ=0x46, CommandReg=0x0C[0m
+[0;33mW (13827) RFID_READER: Command still active - possible hardware issue[0m
+[0;32mI (14337) RFID_NFC: Scanning for cards...[0m
+[0;32mI (14337) RFID_READER: Sending WUPA...[0m
+[0;33mW (14517) RFID_READER: Timeout! IRQ=0x46, CommandReg=0x0C[0m
+[0;33mW (14517) RFID_READER: Command still active - possible hardware issue[0m
+[0;32mI (15027) RFID_NFC: Scanning for cards...[0m
+[0;32mI (15027) RFID_READER: Sending WUPA...[0m
+[0;33mW (15207) RFID_READER: Timeout! IRQ=0x46, CommandReg=0x0C[0m
+[0;33mW (15207) RFID_READER: Command still active - possible hardware issue[0m
+[0;32mI (15717) RFID_NFC: Scanning for cards...[0m
+[0;32mI (15717) RFID_READER: Sending WUPA...[0m
+[0;33mW (15897) RFID_READER: Timeout! IRQ=0x46, CommandReg=0x0C[0m
+[0;33mW (15897) RFID_READER: Command still active - possible hardware issue[0m
+[0;32mI (16407) RFID_NFC: Scanning for cards...[0m
+[0;32mI (16407) RFID_READER: Sending WUPA...[0m
+[0;33mW (16587) RFID_READER: Timeout! IRQ=0x46, CommandReg=0x0C[0m
+[0;33mW (16587) RFID_READER: Command still active - possible hardware issue[0m
+[0;32mI (17097) RFID_NFC: Scanning for cards...[0m
+[0;32mI (17097) RFID_READER: Sending WUPA...[0m
+[0;33mW (17277) RFID_READER: Timeout! IRQ=0x46, CommandReg=0x0C[0m
+[0;33mW (17277) RFID_READER: Command still active - possible hardware issue[0m
+[0;32mI (17787) RFID_NFC: Scanning for cards...[0m
+[0;32mI (17787) RFID_READER: Sending WUPA...[0m
+[0;33mW (17967) RFID_READER: Timeout! IRQ=0x46, CommandReg=0x0C[0m
+[0;33mW (17967) RFID_READER: Command still active - possible hardware issue[0m
+[0;32mI (18477) RFID_NFC: Scanning for cards...[0m
+[0;32mI (18477) RFID_READER: Sending WUPA...[0m
+[0;33mW (18657) RFID_READER: Timeout! IRQ=0x46, CommandReg=0x0C[0m
+[0;33mW (18657) RFID_READER: Command still active - possible hardware issue[0m
+[0;32mI (19167) RFID_NFC: Scanning for cards...[0m
+[0;32mI (19167) RFID_READER: Sending WUPA...[0m
+[0;33mW (19347) RFID_READER: Timeout! IRQ=0x46, CommandReg=0x0C[0m
+[0;33mW (19347) RFID_READER: Command still active - possible hardware issue[0m
+[0;32mI (19857) RFID_NFC: Scanning for cards...[0m
+[0;32mI (19857) RFID_READER: Sending WUPA...[0m
+[0;33mW (20037) RFID_READER: Timeout! IRQ=0x46, CommandReg=0x0C[0m
+[0;33mW (20037) RFID_READER: Command still active - possible hardware issue[0m
+[0;32mI (20547) RFID_NFC: Scanning for cards...[0m
+[0;32mI (20547) RFID_READER: Sending WUPA...[0m

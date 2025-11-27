@@ -1,0 +1,182 @@
+ets Jul 29 2019 12:21:46
+
+rst:0x1 (POWERON_RESET),boot:0x13 (SPI_FAST_FLASH_BOOT)
+configsip: 0, SPIWP:0xee
+clk_drv:0x00,q_drv:0x00,d_drv:0x00,cs0_drv:0x00,hd_drv:0x00,wp_drv:0x00
+mode:DIO, clock div:2
+load:0x3fff0030,len:7176
+load:0x40078000,len:15564
+ho 0 tail 12 room 4
+load:0x40080400,len:4
+load:0x40080404,len:3904
+entry 0x40080640
+[0;32mI (31) boot: ESP-IDF v5.3.1-dirty 2nd stage bootloader[0m
+[0;32mI (31) boot: compile time Nov 27 2025 01:28:47[0m
+[0;32mI (31) boot: Multicore bootloader[0m
+[0;32mI (36) boot: chip revision: v3.1[0m
+[0;32mI (40) boot.esp32: SPI Speed      : 40MHz[0m
+[0;32mI (44) boot.esp32: SPI Mode       : DIO[0m
+[0;32mI (49) boot.esp32: SPI Flash Size : 2MB[0m
+[0;32mI (53) boot: Enabling RNG early entropy source...[0m
+[0;32mI (59) boot: Partition Table:[0m
+[0;32mI (62) boot: ## Label            Usage          Type ST Offset   Length[0m
+[0;32mI (70) boot:  0 nvs              WiFi data        01 02 00009000 00006000[0m
+[0;32mI (77) boot:  1 phy_init         RF data          01 01 0000f000 00001000[0m
+[0;32mI (85) boot:  2 factory          factory app      00 00 00010000 00100000[0m
+[0;32mI (92) boot: End of partition table[0m
+[0;32mI (96) esp_image: segment 0: paddr=00010020 vaddr=3f400020 size=0b68ch ( 46732) map[0m
+[0;32mI (121) esp_image: segment 1: paddr=0001b6b4 vaddr=3ffb0000 size=02494h (  9364) load[0m
+[0;32mI (125) esp_image: segment 2: paddr=0001db50 vaddr=40080000 size=024c8h (  9416) load[0m
+[0;32mI (130) esp_image: segment 3: paddr=00020020 vaddr=400d0020 size=16cc0h ( 93376) map[0m
+[0;32mI (167) esp_image: segment 4: paddr=00036ce8 vaddr=400824c8 size=0c2b0h ( 49840) load[0m
+[0;32mI (194) boot: Loaded app from partition at offset 0x10000[0m
+[0;32mI (194) boot: Disabling RNG early entropy source...[0m
+[0;32mI (206) cpu_start: Multicore app[0m
+[0;32mI (214) cpu_start: Pro cpu start user code[0m
+[0;32mI (215) cpu_start: cpu freq: 160000000 Hz[0m
+[0;32mI (215) app_init: Application information:[0m
+[0;32mI (217) app_init: Project name:     RFID_NFC[0m
+[0;32mI (222) app_init: App version:      1[0m
+[0;32mI (227) app_init: Compile time:     Nov 27 2025 01:28:29[0m
+[0;32mI (233) app_init: ELF file SHA256:  7ec8259f7...[0m
+[0;32mI (238) app_init: ESP-IDF:          v5.3.1-dirty[0m
+[0;32mI (243) efuse_init: Min chip rev:     v0.0[0m
+[0;32mI (248) efuse_init: Max chip rev:     v3.99 [0m
+[0;32mI (253) efuse_init: Chip rev:         v3.1[0m
+[0;32mI (258) heap_init: Initializing. RAM available for dynamic allocation:[0m
+[0;32mI (265) heap_init: At 3FFAE6E0 len 00001920 (6 KiB): DRAM[0m
+[0;32mI (271) heap_init: At 3FFB2D90 len 0002D270 (180 KiB): DRAM[0m
+[0;32mI (277) heap_init: At 3FFE0440 len 00003AE0 (14 KiB): D/IRAM[0m
+[0;32mI (284) heap_init: At 3FFE4350 len 0001BCB0 (111 KiB): D/IRAM[0m
+[0;32mI (290) heap_init: At 4008E778 len 00011888 (70 KiB): IRAM[0m
+[0;32mI (298) spi_flash: detected chip: generic[0m
+[0;32mI (301) spi_flash: flash io: dio[0m
+[0;33mW (305) spi_flash: Detected size(4096k) larger than the size in the binary image header(2048k). Using the size in the binary image header.[0m
+[0;32mI (319) main_task: Started on CPU0[0m
+[0;32mI (329) main_task: Calling app_main()[0m
+[0;32mI (329) RFID_NFC: Starting RFID NFC application...[0m
+[0;32mI (329) RFID_READER: Initializing MFRC522...[0m
+[0;32mI (329) gpio: GPIO[17]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+[0;32mI (459) RFID_READER: MFRC522 Version: 0xB2 (expected 0x91 or 0x92)[0m
+[0;33mW (459) RFID_READER: Unknown version, but may still work[0m
+[0;32mI (459) RFID_NFC: Scanning for cards...[0m
+[0;32mI (1579) RFID_NFC: Scanning for cards...[0m
+[0;32mI (2689) RFID_NFC: Scanning for cards...[0m
+[0;32mI (3799) RFID_NFC: Scanning for cards...[0m
+[0;32mI (4909) RFID_NFC: Scanning for cards...[0m
+[0;32mI (6019) RFID_NFC: Scanning for cards...[0m
+[0;32mI (7129) RFID_NFC: Scanning for cards...[0m
+[0;32mI (7129) RFID_READER: Card detected! ATQA: 0x04 0x00[0m
+[0;33mW (7129) RFID_READER: Anti-collision failed[0m
+[0;32mI (7629) RFID_NFC: Scanning for cards...[0m
+[0;32mI (8739) RFID_NFC: Scanning for cards...[0m
+[0;32mI (9849) RFID_NFC: Scanning for cards...[0m
+[0;32mI (10959) RFID_NFC: Scanning for cards...[0m
+[0;32mI (12069) RFID_NFC: Scanning for cards...[0m
+[0;32mI (13179) RFID_NFC: Scanning for cards...[0m
+[0;32mI (14289) RFID_NFC: Scanning for cards...[0m
+[0;32mI (15399) RFID_NFC: Scanning for cards...[0m
+[0;32mI (16509) RFID_NFC: Scanning for cards...[0m
+[0;32mI (16509) RFID_READER: Card detected! ATQA: 0x04 0x00[0m
+[0;32mI (16509) RFID_READER: Card UID: 45 18 C9 05[0m
+[0;32mI (16509) RFID_NFC: === Card detected and read successfully ===[0m
+[0;32mI (19019) RFID_NFC: Scanning for cards...[0m
+[0;32mI (20129) RFID_NFC: Scanning for cards...[0m
+[0;32mI (21239) RFID_NFC: Scanning for cards...[0m
+[0;32mI (22349) RFID_NFC: Scanning for cards...[0m
+[0;32mI (23459) RFID_NFC: Scanning for cards...[0m
+[0;32mI (23459) RFID_READER: Card detected! ATQA: 0x04 0x00[0m
+[0;32mI (23459) RFID_READER: Card UID: 45 18 C9 05[0m
+[0;32mI (23459) RFID_NFC: === Card detected and read successfully ===[0m
+[0;32mI (25969) RFID_NFC: Scanning for cards...[0m
+[0;32mI (27079) RFID_NFC: Scanning for cards...[0m
+[0;32mI (28189) RFID_NFC: Scanning for cards...[0m
+[0;32mI (28189) RFID_READER: Card detected! ATQA: 0x04 0x00[0m
+[0;32mI (28189) RFID_READER: Card UID: 43 FA 3C EE[0m
+[0;32mI (28189) RFID_NFC: === Card detected and read successfully ===[0m
+[0;32mI (30699) RFID_NFC: Scanning for cards...[0m
+[0;32mI (31809) RFID_NFC: Scanning for cards...[0m
+[0;32mI (32919) RFID_NFC: Scanning for cards...[0m
+[0;32mI (34029) RFID_NFC: Scanning for cards...[0m
+[0;32mI (35139) RFID_NFC: Scanning for cards...[0m
+[0;32mI (35139) RFID_READER: Card detected! ATQA: 0x04 0x00[0m
+[0;32mI (35139) RFID_READER: Card UID: 43 FA 3C EE[0m
+[0;32mI (35139) RFID_NFC: === Card detected and read successfully ===[0m
+[0;32mI (37649) RFID_NFC: Scanning for cards...[0m
+[0;32mI (38759) RFID_NFC: Scanning for cards...[0m
+[0;32mI (38759) RFID_READER: Card detected! ATQA: 0x04 0x00[0m
+[0;32mI (38759) RFID_READER: Card UID: 45 18 C9 05[0m
+[0;32mI (38759) RFID_NFC: === Card detected and read successfully ===[0m
+[0;32mI (41269) RFID_NFC: Scanning for cards...[0m
+[0;32mI (42379) RFID_NFC: Scanning for cards...[0m
+[0;32mI (43489) RFID_NFC: Scanning for cards...[0m
+[0;32mI (44599) RFID_NFC: Scanning for cards...[0m
+[0;32mI (45709) RFID_NFC: Scanning for cards...[0m
+[0;32mI (46819) RFID_NFC: Scanning for cards...[0m
+[0;32mI (47929) RFID_NFC: Scanning for cards...[0m
+[0;32mI (49039) RFID_NFC: Scanning for cards...[0m
+[0;32mI (50149) RFID_NFC: Scanning for cards...[0m
+[0;32mI (51259) RFID_NFC: Scanning for cards...[0m
+[0;32mI (52369) RFID_NFC: Scanning for cards...[0m
+[0;32mI (53479) RFID_NFC: Scanning for cards...[0m
+[0;32mI (54589) RFID_NFC: Scanning for cards...[0m
+[0;32mI (55699) RFID_NFC: Scanning for cards...[0m
+[0;32mI (56809) RFID_NFC: Scanning for cards...[0m
+[0;32mI (57919) RFID_NFC: Scanning for cards...[0m
+[0;32mI (59029) RFID_NFC: Scanning for cards...[0m
+[0;32mI (60139) RFID_NFC: Scanning for cards...[0m
+[0;32mI (61249) RFID_NFC: Scanning for cards...[0m
+[0;32mI (62359) RFID_NFC: Scanning for cards...[0m
+[0;32mI (63469) RFID_NFC: Scanning for cards...[0m
+[0;32mI (64579) RFID_NFC: Scanning for cards...[0m
+[0;32mI (65689) RFID_NFC: Scanning for cards...[0m
+[0;32mI (66799) RFID_NFC: Scanning for cards...[0m
+[0;32mI (67909) RFID_NFC: Scanning for cards...[0m
+[0;32mI (69019) RFID_NFC: Scanning for cards...[0m
+[0;32mI (70129) RFID_NFC: Scanning for cards...[0m
+[0;32mI (71239) RFID_NFC: Scanning for cards...[0m
+[0;32mI (72349) RFID_NFC: Scanning for cards...[0m
+[0;32mI (73459) RFID_NFC: Scanning for cards...[0m
+[0;32mI (74569) RFID_NFC: Scanning for cards...[0m
+[0;32mI (75679) RFID_NFC: Scanning for cards...[0m
+[0;32mI (76789) RFID_NFC: Scanning for cards...[0m
+[0;32mI (77899) RFID_NFC: Scanning for cards...[0m
+[0;32mI (79009) RFID_NFC: Scanning for cards...[0m
+[0;32mI (80119) RFID_NFC: Scanning for cards...[0m
+[0;32mI (81229) RFID_NFC: Scanning for cards...[0m
+[0;32mI (82339) RFID_NFC: Scanning for cards...[0m
+[0;32mI (83449) RFID_NFC: Scanning for cards...[0m
+[0;32mI (84559) RFID_NFC: Scanning for cards...[0m
+[0;32mI (85669) RFID_NFC: Scanning for cards...[0m
+[0;32mI (86779) RFID_NFC: Scanning for cards...[0m
+[0;32mI (87889) RFID_NFC: Scanning for cards...[0m
+[0;32mI (88999) RFID_NFC: Scanning for cards...[0m
+[0;32mI (90109) RFID_NFC: Scanning for cards...[0m
+[0;32mI (91219) RFID_NFC: Scanning for cards...[0m
+[0;32mI (92329) RFID_NFC: Scanning for cards...[0m
+[0;32mI (93439) RFID_NFC: Scanning for cards...[0m
+[0;32mI (94549) RFID_NFC: Scanning for cards...[0m
+[0;32mI (95659) RFID_NFC: Scanning for cards...[0m
+[0;32mI (96769) RFID_NFC: Scanning for cards...[0m
+[0;32mI (97879) RFID_NFC: Scanning for cards...[0m
+[0;32mI (98989) RFID_NFC: Scanning for cards...[0m
+[0;32mI (100099) RFID_NFC: Scanning for cards...[0m
+[0;32mI (101209) RFID_NFC: Scanning for cards...[0m
+[0;32mI (102319) RFID_NFC: Scanning for cards...[0m
+[0;32mI (103429) RFID_NFC: Scanning for cards...[0m
+[0;32mI (104539) RFID_NFC: Scanning for cards...[0m
+[0;32mI (105649) RFID_NFC: Scanning for cards...[0m
+[0;32mI (106759) RFID_NFC: Scanning for cards...[0m
+[0;32mI (107869) RFID_NFC: Scanning for cards...[0m
+[0;32mI (108979) RFID_NFC: Scanning for cards...[0m
+[0;32mI (110089) RFID_NFC: Scanning for cards...[0m
+[0;32mI (111199) RFID_NFC: Scanning for cards...[0m
+[0;32mI (112309) RFID_NFC: Scanning for cards...[0m
+[0;32mI (113419) RFID_NFC: Scanning for cards...[0m
+[0;32mI (114529) RFID_NFC: Scanning for cards...[0m
+[0;32mI (115639) RFID_NFC: Scanning for cards...[0m
+[0;32mI (116749) RFID_NFC: Scanning for cards...[0m
+[0;32mI (117859) RFID_NFC: Scanning for cards...[0m
+[0;32mI (118969) RFID_NFC: Scanning for cards...[0m
+[0;32mI (120079) RFID_NFC: Scanning for cards...[0m
+[0;32mI (121189) RFID_NFC: Scanning for cards...[0m

@@ -1,0 +1,621 @@
+ets Jul 29 2019 12:21:46
+
+rst:0x1 (POWERON_RESET),boot:0x13 (SPI_FAST_FLASH_BOOT)
+configsip: 0, SPIWP:0xee
+clk_drv:0x00,q_drv:0x00,d_drv:0x00,cs0_drv:0x00,hd_drv:0x00,wp_drv:0x00
+mode:DIO, clock div:2
+load:0x3fff0030,len:7176
+load:0x40078000,len:15564
+ho 0 tail 12 room 4
+load:0x40080400,len:4
+load:0x40080404,len:3904
+entry 0x40080640
+[0;32mI (31) boot: ESP-IDF v5.3.1-dirty 2nd stage bootloader[0m
+[0;32mI (31) boot: compile time Nov 27 2025 01:28:47[0m
+[0;32mI (31) boot: Multicore bootloader[0m
+[0;32mI (36) boot: chip revision: v3.1[0m
+[0;32mI (40) boot.esp32: SPI Speed      : 40MHz[0m
+[0;32mI (44) boot.esp32: SPI Mode       : DIO[0m
+[0;32mI (49) boot.esp32: SPI Flash Size : 2MB[0m
+[0;32mI (53) boot: Enabling RNG early entropy source...[0m
+[0;32mI (59) boot: Partition Table:[0m
+[0;32mI (62) boot: ## Label            Usage          Type ST Offset   Length[0m
+[0;32mI (70) boot:  0 nvs              WiFi data        01 02 00009000 00006000[0m
+[0;32mI (77) boot:  1 phy_init         RF data          01 01 0000f000 00001000[0m
+[0;32mI (85) boot:  2 factory          factory app      00 00 00010000 00100000[0m
+[0;32mI (92) boot: End of partition table[0m
+[0;32mI (96) esp_image: segment 0: paddr=00010020 vaddr=3f400020 size=0cbb0h ( 52144) map[0m
+[0;32mI (123) esp_image: segment 1: paddr=0001cbd8 vaddr=3ffb0000 size=024c4h (  9412) load[0m
+[0;32mI (126) esp_image: segment 2: paddr=0001f0a4 vaddr=40080000 size=00f74h (  3956) load[0m
+[0;32mI (130) esp_image: segment 3: paddr=00020020 vaddr=400d0020 size=1bcd4h (113876) map[0m
+[0;32mI (176) esp_image: segment 4: paddr=0003bcfc vaddr=40080f74 size=0eccch ( 60620) load[0m
+[0;32mI (208) boot: Loaded app from partition at offset 0x10000[0m
+[0;32mI (208) boot: Disabling RNG early entropy source...[0m
+[0;32mI (220) cpu_start: Multicore app[0m
+[0;32mI (228) cpu_start: Pro cpu start user code[0m
+[0;32mI (228) cpu_start: cpu freq: 160000000 Hz[0m
+[0;32mI (228) app_init: Application information:[0m
+[0;32mI (231) app_init: Project name:     RFID_NFC[0m
+[0;32mI (236) app_init: App version:      1[0m
+[0;32mI (240) app_init: Compile time:     Nov 27 2025 01:28:29[0m
+[0;32mI (246) app_init: ELF file SHA256:  d82abffeb...[0m
+[0;32mI (252) app_init: ESP-IDF:          v5.3.1-dirty[0m
+[0;32mI (257) efuse_init: Min chip rev:     v0.0[0m
+[0;32mI (262) efuse_init: Max chip rev:     v3.99 [0m
+[0;32mI (267) efuse_init: Chip rev:         v3.1[0m
+[0;32mI (272) heap_init: Initializing. RAM available for dynamic allocation:[0m
+[0;32mI (279) heap_init: At 3FFAE6E0 len 00001920 (6 KiB): DRAM[0m
+[0;32mI (285) heap_init: At 3FFB2DE0 len 0002D220 (180 KiB): DRAM[0m
+[0;32mI (291) heap_init: At 3FFE0440 len 00003AE0 (14 KiB): D/IRAM[0m
+[0;32mI (297) heap_init: At 3FFE4350 len 0001BCB0 (111 KiB): D/IRAM[0m
+[0;32mI (304) heap_init: At 4008FC40 len 000103C0 (64 KiB): IRAM[0m
+[0;32mI (312) spi_flash: detected chip: generic[0m
+[0;32mI (315) spi_flash: flash io: dio[0m
+[0;33mW (319) spi_flash: Detected size(4096k) larger than the size in the binary image header(2048k). Using the size in the binary image header.[0m
+[0;33mW (332) i2c: This driver is an old driver, please migrate your application code to adapt `driver/i2c_master.h`[0m
+[0;32mI (343) main_task: Started on CPU0[0m
+[0;32mI (353) main_task: Calling app_main()[0m
+[0;32mI (353) RFID_NFC: Starting RFID NFC application...[0m
+[0;32mI (353) RFID_READER: Initializing MFRC522...[0m
+[0;32mI (353) gpio: GPIO[17]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+[0;32mI (403) RFID_READER: MFRC522 Version: 0xB2 (expected 0x91 or 0x92)[0m
+[0;33mW (403) RFID_READER: Unknown version, but may still work[0m
+[0;32mI (403) KEYPAD: Initializing 4x3 keypad...[0m
+[0;32mI (403) gpio: GPIO[12]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+[0;32mI (413) gpio: GPIO[13]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+[0;32mI (423) gpio: GPIO[14]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+[0;32mI (433) gpio: GPIO[15]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+[0;32mI (443) gpio: GPIO[25]| InputEn: 1| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (453) gpio: GPIO[26]| InputEn: 1| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (463) gpio: GPIO[27]| InputEn: 1| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (473) KEYPAD: Keypad initialized[0m
+[0;32mI (473) KEYPAD:   Rows: 12, 13, 14, 15[0m
+[0;32mI (483) KEYPAD:   Cols: 25, 26, 27[0m
+[0;32mI (483) LCD_I2C: Initializing LCD 16x2 at address 0x27...[0m
+[0;32mI (493) LCD_I2C: I2C initialized (SDA=21, SCL=22)[0m
+[0;32mI (623) LCD_I2C: LCD initialized successfully[0m
+[0;32mI (763) RFID_NFC: Scanning for cards...[0m
+[0;32mI (983) RFID_NFC: Scanning for cards...[0m
+[0;32mI (1203) RFID_NFC: Scanning for cards...[0m
+[0;32mI (1423) RFID_NFC: Scanning for cards...[0m
+[0;32mI (1643) RFID_NFC: Scanning for cards...[0m
+[0;32mI (1863) RFID_NFC: Scanning for cards...[0m
+[0;32mI (2083) RFID_NFC: Scanning for cards...[0m
+[0;32mI (2303) RFID_NFC: Scanning for cards...[0m
+[0;32mI (2523) RFID_NFC: Scanning for cards...[0m
+[0;32mI (2743) RFID_NFC: Scanning for cards...[0m
+[0;32mI (2963) RFID_NFC: Scanning for cards...[0m
+[0;32mI (3183) RFID_NFC: Scanning for cards...[0m
+[0;32mI (3403) RFID_NFC: Scanning for cards...[0m
+[0;32mI (3623) RFID_NFC: Scanning for cards...[0m
+[0;32mI (3623) RFID_NFC: Card ID: 43FA3CEE[0m
+[0;32mI (3623) RFID_NFC: === Card detected and read successfully ===[0m
+[0;32mI (4723) RFID_NFC: Scanning for cards...[0m
+[0;32mI (4943) RFID_NFC: Scanning for cards...[0m
+[0;32mI (5163) RFID_NFC: Scanning for cards...[0m
+[0;32mI (5383) RFID_NFC: Scanning for cards...[0m
+[0;32mI (5603) RFID_NFC: Scanning for cards...[0m
+[0;32mI (5823) RFID_NFC: Scanning for cards...[0m
+[0;32mI (6043) RFID_NFC: Scanning for cards...[0m
+[0;32mI (6263) RFID_NFC: Scanning for cards...[0m
+[0;32mI (6483) RFID_NFC: Scanning for cards...[0m
+[0;32mI (6703) RFID_NFC: Scanning for cards...[0m
+[0;32mI (6923) RFID_NFC: Scanning for cards...[0m
+[0;32mI (7143) RFID_NFC: Scanning for cards...[0m
+[0;32mI (7363) RFID_NFC: Scanning for cards...[0m
+[0;32mI (7583) RFID_NFC: Scanning for cards...[0m
+[0;32mI (7803) RFID_NFC: Scanning for cards...[0m
+[0;32mI (8023) RFID_NFC: Scanning for cards...[0m
+[0;32mI (8243) RFID_NFC: Scanning for cards...[0m
+[0;32mI (8463) RFID_NFC: Scanning for cards...[0m
+[0;32mI (8563) RFID_NFC: Scanning for cards...[0m
+[0;32mI (8783) RFID_NFC: Scanning for cards...[0m
+[0;32mI (8783) RFID_NFC: Card ID: 43FA3CEE[0m
+[0;32mI (8783) RFID_NFC: === Card detected and read successfully ===[0m
+[0;32mI (9883) RFID_NFC: Scanning for cards...[0m
+[0;32mI (10103) RFID_NFC: Scanning for cards...[0m
+[0;32mI (10323) RFID_NFC: Scanning for cards...[0m
+[0;32mI (10543) RFID_NFC: Scanning for cards...[0m
+[0;32mI (10763) RFID_NFC: Scanning for cards...[0m
+[0;32mI (10983) RFID_NFC: Scanning for cards...[0m
+[0;32mI (11203) RFID_NFC: Scanning for cards...[0m
+[0;32mI (11423) RFID_NFC: Scanning for cards...[0m
+[0;32mI (11643) RFID_NFC: Scanning for cards...[0m
+[0;32mI (11863) RFID_NFC: Scanning for cards...[0m
+[0;32mI (12083) RFID_NFC: Scanning for cards...[0m
+[0;32mI (12303) RFID_NFC: Scanning for cards...[0m
+[0;32mI (12523) RFID_NFC: Scanning for cards...[0m
+[0;32mI (12623) RFID_NFC: Scanning for cards...[0m
+[0;32mI (12843) RFID_NFC: Scanning for cards...[0m
+[0;32mI (12843) RFID_NFC: Card ID: 4518C905[0m
+[0;32mI (12843) RFID_NFC: === Card detected and read successfully ===[0m
+[0;32mI (13943) RFID_NFC: Scanning for cards...[0m
+[0;32mI (14163) RFID_NFC: Scanning for cards...[0m
+[0;32mI (14383) RFID_NFC: Scanning for cards...[0m
+[0;32mI (14603) RFID_NFC: Scanning for cards...[0m
+[0;32mI (14823) RFID_NFC: Scanning for cards...[0m
+[0;32mI (15043) RFID_NFC: Scanning for cards...[0m
+[0;32mI (15263) RFID_NFC: Scanning for cards...[0m
+[0;32mI (15483) RFID_NFC: Scanning for cards...[0m
+[0;32mI (15703) RFID_NFC: Scanning for cards...[0m
+[0;32mI (15923) RFID_NFC: Scanning for cards...[0m
+[0;32mI (16143) RFID_NFC: Scanning for cards...[0m
+[0;32mI (16363) RFID_NFC: Scanning for cards...[0m
+[0;32mI (16583) RFID_NFC: Scanning for cards...[0m
+[0;32mI (16803) RFID_NFC: Scanning for cards...[0m
+[0;32mI (17023) RFID_NFC: Scanning for cards...[0m
+[0;32mI (17243) RFID_NFC: Scanning for cards...[0m
+[0;32mI (17463) RFID_NFC: Scanning for cards...[0m
+[0;32mI (17683) RFID_NFC: Scanning for cards...[0m
+[0;32mI (17903) RFID_NFC: Scanning for cards...[0m
+[0;32mI (18123) RFID_NFC: Scanning for cards...[0m
+[0;32mI (18343) RFID_NFC: Scanning for cards...[0m
+[0;32mI (18563) RFID_NFC: Scanning for cards...[0m
+[0;32mI (18783) RFID_NFC: Scanning for cards...[0m
+[0;32mI (19003) RFID_NFC: Scanning for cards...[0m
+[0;32mI (19223) RFID_NFC: Scanning for cards...[0m
+[0;32mI (19443) RFID_NFC: Scanning for cards...[0m
+[0;32mI (19663) RFID_NFC: Scanning for cards...[0m
+[0;32mI (19883) RFID_NFC: Scanning for cards...[0m
+[0;32mI (20103) RFID_NFC: Scanning for cards...[0m
+[0;32mI (20323) RFID_NFC: Scanning for cards...[0m
+[0;32mI (20423) RFID_NFC: Scanning for cards...[0m
+[0;32mI (20643) RFID_NFC: Scanning for cards...[0m
+[0;32mI (20643) RFID_NFC: Card ID: 4518C905[0m
+[0;32mI (20643) RFID_NFC: === Card detected and read successfully ===[0m
+[0;32mI (21743) RFID_NFC: Scanning for cards...[0m
+[0;32mI (21963) RFID_NFC: Scanning for cards...[0m
+[0;32mI (22183) RFID_NFC: Scanning for cards...[0m
+[0;32mI (22403) RFID_NFC: Scanning for cards...[0m
+[0;32mI (22623) RFID_NFC: Scanning for cards...[0m
+[0;32mI (22843) RFID_NFC: Scanning for cards...[0m
+[0;32mI (23063) RFID_NFC: Scanning for cards...[0m
+[0;32mI (23283) RFID_NFC: Scanning for cards...[0m
+[0;32mI (23503) RFID_NFC: Scanning for cards...[0m
+[0;32mI (23723) RFID_NFC: Scanning for cards...[0m
+[0;32mI (23943) RFID_NFC: Scanning for cards...[0m
+[0;32mI (24163) RFID_NFC: Scanning for cards...[0m
+[0;32mI (24383) RFID_NFC: Scanning for cards...[0m
+[0;32mI (24603) RFID_NFC: Scanning for cards...[0m
+[0;32mI (24823) RFID_NFC: Scanning for cards...[0m
+[0;32mI (25043) RFID_NFC: Scanning for cards...[0m
+[0;32mI (25263) RFID_NFC: Scanning for cards...[0m
+[0;32mI (25483) RFID_NFC: Scanning for cards...[0m
+[0;32mI (25703) RFID_NFC: Scanning for cards...[0m
+[0;32mI (25923) RFID_NFC: Scanning for cards...[0m
+[0;32mI (26143) RFID_NFC: Scanning for cards...[0m
+[0;32mI (26363) RFID_NFC: Scanning for cards...[0m
+[0;32mI (26583) RFID_NFC: Scanning for cards...[0m
+[0;32mI (26803) RFID_NFC: Scanning for cards...[0m
+[0;32mI (27023) RFID_NFC: Scanning for cards...[0m
+[0;32mI (27243) RFID_NFC: Scanning for cards...[0m
+[0;32mI (27463) RFID_NFC: Scanning for cards...[0m
+[0;32mI (27683) RFID_NFC: Scanning for cards...[0m
+[0;32mI (27903) RFID_NFC: Scanning for cards...[0m
+[0;32mI (28123) RFID_NFC: Scanning for cards...[0m
+[0;32mI (28343) RFID_NFC: Scanning for cards...[0m
+[0;32mI (28563) RFID_NFC: Scanning for cards...[0m
+[0;32mI (28783) RFID_NFC: Scanning for cards...[0m
+[0;32mI (29003) RFID_NFC: Scanning for cards...[0m
+[0;32mI (29223) RFID_NFC: Scanning for cards...[0m
+[0;32mI (29443) RFID_NFC: Scanning for cards...[0m
+[0;32mI (29663) RFID_NFC: Scanning for cards...[0m
+[0;32mI (29883) RFID_NFC: Scanning for cards...[0m
+[0;32mI (30103) RFID_NFC: Scanning for cards...[0m
+[0;32mI (30323) RFID_NFC: Scanning for cards...[0m
+[0;32mI (30543) RFID_NFC: Scanning for cards...[0m
+[0;32mI (30763) RFID_NFC: Scanning for cards...[0m
+[0;32mI (30983) RFID_NFC: Scanning for cards...[0m
+[0;32mI (31203) RFID_NFC: Scanning for cards...[0m
+[0;32mI (31423) RFID_NFC: Scanning for cards...[0m
+[0;32mI (31643) RFID_NFC: Scanning for cards...[0m
+[0;32mI (31863) RFID_NFC: Scanning for cards...[0m
+[0;32mI (32083) RFID_NFC: Scanning for cards...[0m
+[0;32mI (32303) RFID_NFC: Scanning for cards...[0m
+[0;32mI (32523) RFID_NFC: Scanning for cards...[0m
+[0;32mI (32743) RFID_NFC: Scanning for cards...[0m
+[0;32mI (32963) RFID_NFC: Scanning for cards...[0m
+[0;32mI (33183) RFID_NFC: Scanning for cards...[0m
+[0;32mI (33403) RFID_NFC: Scanning for cards...[0m
+[0;32mI (33623) RFID_NFC: Scanning for cards...[0m
+[0;32mI (33843) RFID_NFC: Scanning for cards...[0m
+[0;32mI (34063) RFID_NFC: Scanning for cards...[0m
+[0;32mI (34283) RFID_NFC: Scanning for cards...[0m
+[0;32mI (34503) RFID_NFC: Scanning for cards...[0m
+[0;32mI (34723) RFID_NFC: Scanning for cards...[0m
+[0;32mI (34943) RFID_NFC: Scanning for cards...[0m
+[0;32mI (35163) RFID_NFC: Scanning for cards...[0m
+[0;32mI (35383) RFID_NFC: Scanning for cards...[0m
+[0;32mI (35603) RFID_NFC: Scanning for cards...[0m
+[0;32mI (35823) RFID_NFC: Scanning for cards...[0m
+[0;32mI (36043) RFID_NFC: Scanning for cards...[0m
+[0;32mI (36263) RFID_NFC: Scanning for cards...[0m
+[0;32mI (36483) RFID_NFC: Scanning for cards...[0m
+[0;32mI (36703) RFID_NFC: Scanning for cards...[0m
+[0;32mI (36923) RFID_NFC: Scanning for cards...[0m
+[0;32mI (37143) RFID_NFC: Scanning for cards...[0m
+[0;32mI (37363) RFID_NFC: Scanning for cards...[0m
+[0;32mI (37583) RFID_NFC: Scanning for cards...[0m
+[0;32mI (37803) RFID_NFC: Scanning for cards...[0m
+[0;32mI (38023) RFID_NFC: Scanning for cards...[0m
+[0;32mI (38243) RFID_NFC: Scanning for cards...[0m
+[0;32mI (38463) RFID_NFC: Scanning for cards...[0m
+[0;32mI (38683) RFID_NFC: Scanning for cards...[0m
+[0;32mI (38903) RFID_NFC: Scanning for cards...[0m
+[0;32mI (39123) RFID_NFC: Scanning for cards...[0m
+[0;32mI (39343) RFID_NFC: Scanning for cards...[0m
+[0;32mI (39563) RFID_NFC: Scanning for cards...[0m
+[0;32mI (39783) RFID_NFC: Scanning for cards...[0m
+[0;32mI (40003) RFID_NFC: Scanning for cards...[0m
+[0;32mI (40223) RFID_NFC: Scanning for cards...[0m
+[0;32mI (40443) RFID_NFC: Scanning for cards...[0m
+[0;32mI (40663) RFID_NFC: Scanning for cards...[0m
+[0;32mI (40883) RFID_NFC: Scanning for cards...[0m
+[0;32mI (41103) RFID_NFC: Scanning for cards...[0m
+[0;32mI (41323) RFID_NFC: Scanning for cards...[0m
+[0;32mI (41543) RFID_NFC: Scanning for cards...[0m
+[0;32mI (41763) RFID_NFC: Scanning for cards...[0m
+[0;32mI (41983) RFID_NFC: Scanning for cards...[0m
+[0;32mI (42203) RFID_NFC: Scanning for cards...[0m
+[0;32mI (42423) RFID_NFC: Scanning for cards...[0m
+[0;32mI (42643) RFID_NFC: Scanning for cards...[0m
+[0;32mI (42863) RFID_NFC: Scanning for cards...[0m
+[0;32mI (43083) RFID_NFC: Scanning for cards...[0m
+[0;32mI (43303) RFID_NFC: Scanning for cards...[0m
+[0;32mI (43523) RFID_NFC: Scanning for cards...[0m
+[0;32mI (43743) RFID_NFC: Scanning for cards...[0m
+[0;32mI (43963) RFID_NFC: Scanning for cards...[0m
+[0;32mI (44183) RFID_NFC: Scanning for cards...[0m
+[0;32mI (44403) RFID_NFC: Scanning for cards...[0m
+[0;32mI (44623) RFID_NFC: Scanning for cards...[0m
+[0;32mI (44843) RFID_NFC: Scanning for cards...[0m
+[0;32mI (45063) RFID_NFC: Scanning for cards...[0m
+[0;32mI (45283) RFID_NFC: Scanning for cards...[0m
+[0;32mI (45503) RFID_NFC: Scanning for cards...[0m
+[0;32mI (45723) RFID_NFC: Scanning for cards...[0m
+[0;32mI (45943) RFID_NFC: Scanning for cards...[0m
+[0;32mI (46163) RFID_NFC: Scanning for cards...[0m
+[0;32mI (46383) RFID_NFC: Scanning for cards...[0m
+[0;32mI (46603) RFID_NFC: Scanning for cards...[0m
+[0;32mI (46823) RFID_NFC: Scanning for cards...[0m
+[0;32mI (47043) RFID_NFC: Scanning for cards...[0m
+[0;32mI (47263) RFID_NFC: Scanning for cards...[0m
+[0;32mI (47483) RFID_NFC: Scanning for cards...[0m
+[0;32mI (47703) RFID_NFC: Scanning for cards...[0m
+[0;32mI (47923) RFID_NFC: Scanning for cards...[0m
+[0;32mI (48143) RFID_NFC: Scanning for cards...[0m
+[0;32mI (48363) RFID_NFC: Scanning for cards...[0m
+[0;32mI (48583) RFID_NFC: Scanning for cards...[0m
+[0;32mI (48803) RFID_NFC: Scanning for cards...[0m
+[0;32mI (49023) RFID_NFC: Scanning for cards...[0m
+[0;32mI (49243) RFID_NFC: Scanning for cards...[0m
+[0;32mI (49463) RFID_NFC: Scanning for cards...[0m
+[0;32mI (49683) RFID_NFC: Scanning for cards...[0m
+[0;32mI (49903) RFID_NFC: Scanning for cards...[0m
+[0;32mI (50123) RFID_NFC: Scanning for cards...[0m
+[0;32mI (50343) RFID_NFC: Scanning for cards...[0m
+[0;32mI (50563) RFID_NFC: Scanning for cards...[0m
+[0;32mI (50783) RFID_NFC: Scanning for cards...[0m
+[0;32mI (51003) RFID_NFC: Scanning for cards...[0m
+[0;32mI (51223) RFID_NFC: Scanning for cards...[0m
+[0;32mI (51443) RFID_NFC: Scanning for cards...[0m
+[0;32mI (51663) RFID_NFC: Scanning for cards...[0m
+[0;32mI (51883) RFID_NFC: Scanning for cards...[0m
+[0;32mI (52103) RFID_NFC: Scanning for cards...[0m
+[0;32mI (52323) RFID_NFC: Scanning for cards...[0m
+[0;32mI (52543) RFID_NFC: Scanning for cards...[0m
+[0;32mI (52763) RFID_NFC: Scanning for cards...[0m
+[0;32mI (52983) RFID_NFC: Scanning for cards...[0m
+[0;32mI (53203) RFID_NFC: Scanning for cards...[0m
+[0;32mI (53423) RFID_NFC: Scanning for cards...[0m
+[0;32mI (53643) RFID_NFC: Scanning for cards...[0m
+[0;32mI (53863) RFID_NFC: Scanning for cards...[0m
+[0;32mI (54083) RFID_NFC: Scanning for cards...[0m
+[0;32mI (54303) RFID_NFC: Scanning for cards...[0m
+[0;32mI (54523) RFID_NFC: Scanning for cards...[0m
+[0;32mI (54743) RFID_NFC: Scanning for cards...[0m
+[0;32mI (54963) RFID_NFC: Scanning for cards...[0m
+[0;32mI (55183) RFID_NFC: Scanning for cards...[0m
+[0;32mI (55403) RFID_NFC: Scanning for cards...[0m
+[0;32mI (55623) RFID_NFC: Scanning for cards...[0m
+[0;32mI (55843) RFID_NFC: Scanning for cards...[0m
+[0;32mI (56063) RFID_NFC: Scanning for cards...[0m
+[0;32mI (56283) RFID_NFC: Scanning for cards...[0m
+[0;32mI (56503) RFID_NFC: Scanning for cards...[0m
+[0;32mI (56723) RFID_NFC: Scanning for cards...[0m
+[0;32mI (56943) RFID_NFC: Scanning for cards...[0m
+[0;32mI (57163) RFID_NFC: Scanning for cards...[0m
+[0;32mI (57383) RFID_NFC: Scanning for cards...[0m
+[0;32mI (57603) RFID_NFC: Scanning for cards...[0m
+[0;32mI (57823) RFID_NFC: Scanning for cards...[0m
+[0;32mI (58043) RFID_NFC: Scanning for cards...[0m
+[0;32mI (58263) RFID_NFC: Scanning for cards...[0m
+[0;32mI (58483) RFID_NFC: Scanning for cards...[0m
+[0;32mI (58703) RFID_NFC: Scanning for cards...[0m
+[0;32mI (58923) RFID_NFC: Scanning for cards...[0m
+[0;32mI (59143) RFID_NFC: Scanning for cards...[0m
+[0;32mI (59363) RFID_NFC: Scanning for cards...[0m
+[0;32mI (59583) RFID_NFC: Scanning for cards...[0m
+[0;32mI (59803) RFID_NFC: Scanning for cards...[0m
+[0;32mI (60023) RFID_NFC: Scanning for cards...[0m
+[0;32mI (60243) RFID_NFC: Scanning for cards...[0m
+[0;32mI (60463) RFID_NFC: Scanning for cards...[0m
+[0;32mI (60683) RFID_NFC: Scanning for cards...[0m
+[0;32mI (60903) RFID_NFC: Scanning for cards...[0m
+[0;32mI (61123) RFID_NFC: Scanning for cards...[0m
+[0;32mI (61343) RFID_NFC: Scanning for cards...[0m
+[0;32mI (61443) RFID_NFC: Scanning for cards...[0m
+[0;32mI (61663) RFID_NFC: Scanning for cards...[0m
+[0;32mI (61663) RFID_NFC: Card ID: 4518C905[0m
+[0;32mI (61663) RFID_NFC: === Card detected and read successfully ===[0m
+[0;32mI (62763) RFID_NFC: Scanning for cards...[0m
+[0;32mI (62983) RFID_NFC: Scanning for cards...[0m
+[0;32mI (63203) RFID_NFC: Scanning for cards...[0m
+[0;32mI (63423) RFID_NFC: Scanning for cards...[0m
+[0;32mI (63643) RFID_NFC: Scanning for cards...[0m
+[0;32mI (63863) RFID_NFC: Scanning for cards...[0m
+[0;32mI (64083) RFID_NFC: Scanning for cards...[0m
+[0;32mI (64303) RFID_NFC: Scanning for cards...[0m
+[0;32mI (64523) RFID_NFC: Scanning for cards...[0m
+[0;32mI (64743) RFID_NFC: Scanning for cards...[0m
+[0;32mI (64963) RFID_NFC: Scanning for cards...[0m
+[0;32mI (65183) RFID_NFC: Scanning for cards...[0m
+[0;32mI (65403) RFID_NFC: Scanning for cards...[0m
+[0;32mI (65623) RFID_NFC: Scanning for cards...[0m
+[0;32mI (65843) RFID_NFC: Scanning for cards...[0m
+[0;32mI (66063) RFID_NFC: Scanning for cards...[0m
+[0;32mI (66283) RFID_NFC: Scanning for cards...[0m
+[0;32mI (66503) RFID_NFC: Scanning for cards...[0m
+[0;32mI (66723) RFID_NFC: Scanning for cards...[0m
+[0;32mI (66943) RFID_NFC: Scanning for cards...[0m
+[0;32mI (67163) RFID_NFC: Scanning for cards...[0m
+[0;32mI (67383) RFID_NFC: Scanning for cards...[0m
+[0;32mI (67603) RFID_NFC: Scanning for cards...[0m
+[0;32mI (67823) RFID_NFC: Scanning for cards...[0m
+[0;32mI (68043) RFID_NFC: Scanning for cards...[0m
+[0;32mI (68263) RFID_NFC: Scanning for cards...[0m
+[0;32mI (68483) RFID_NFC: Scanning for cards...[0m
+[0;32mI (68703) RFID_NFC: Scanning for cards...[0m
+[0;32mI (68923) RFID_NFC: Scanning for cards...[0m
+[0;32mI (69143) RFID_NFC: Scanning for cards...[0m
+[0;32mI (69363) RFID_NFC: Scanning for cards...[0m
+[0;32mI (69583) RFID_NFC: Scanning for cards...[0m
+[0;32mI (69803) RFID_NFC: Scanning for cards...[0m
+[0;32mI (70023) RFID_NFC: Scanning for cards...[0m
+[0;32mI (70243) RFID_NFC: Scanning for cards...[0m
+[0;32mI (70463) RFID_NFC: Scanning for cards...[0m
+[0;32mI (70683) RFID_NFC: Scanning for cards...[0m
+[0;32mI (70903) RFID_NFC: Scanning for cards...[0m
+[0;32mI (71123) RFID_NFC: Scanning for cards...[0m
+[0;32mI (71343) RFID_NFC: Scanning for cards...[0m
+[0;32mI (71563) RFID_NFC: Scanning for cards...[0m
+[0;32mI (71783) RFID_NFC: Scanning for cards...[0m
+[0;32mI (72003) RFID_NFC: Scanning for cards...[0m
+[0;32mI (72223) RFID_NFC: Scanning for cards...[0m
+[0;32mI (72443) RFID_NFC: Scanning for cards...[0m
+[0;32mI (72663) RFID_NFC: Scanning for cards...[0m
+[0;32mI (72823) RFID_NFC: Scanning for cards...[0m
+[0;32mI (73043) RFID_NFC: Scanning for cards...[0m
+[0;32mI (73263) RFID_NFC: Scanning for cards...[0m
+[0;32mI (73483) RFID_NFC: Scanning for cards...[0m
+[0;32mI (73703) RFID_NFC: Scanning for cards...[0m
+[0;32mI (73923) RFID_NFC: Scanning for cards...[0m
+[0;32mI (74143) RFID_NFC: Scanning for cards...[0m
+[0;32mI (74363) RFID_NFC: Scanning for cards...[0m
+[0;32mI (74583) RFID_NFC: Scanning for cards...[0m
+[0;32mI (74803) RFID_NFC: Scanning for cards...[0m
+[0;32mI (74913) RFID_NFC: Scanning for cards...[0m
+[0;32mI (75133) RFID_NFC: Scanning for cards...[0m
+[0;32mI (75353) RFID_NFC: Scanning for cards...[0m
+[0;32mI (75573) RFID_NFC: Scanning for cards...[0m
+[0;32mI (75793) RFID_NFC: Scanning for cards...[0m
+[0;32mI (76013) RFID_NFC: Scanning for cards...[0m
+[0;32mI (76233) RFID_NFC: Scanning for cards...[0m
+[0;32mI (76453) RFID_NFC: Scanning for cards...[0m
+[0;32mI (76673) RFID_NFC: Scanning for cards...[0m
+[0;32mI (76893) RFID_NFC: Scanning for cards...[0m
+[0;32mI (77113) RFID_NFC: Scanning for cards...[0m
+[0;32mI (77333) RFID_NFC: Scanning for cards...[0m
+[0;32mI (77553) RFID_NFC: Scanning for cards...[0m
+[0;32mI (77773) RFID_NFC: Scanning for cards...[0m
+[0;32mI (77993) RFID_NFC: Scanning for cards...[0m
+[0;32mI (78213) RFID_NFC: Scanning for cards...[0m
+[0;32mI (78433) RFID_NFC: Scanning for cards...[0m
+[0;32mI (78653) RFID_NFC: Scanning for cards...[0m
+[0;32mI (78873) RFID_NFC: Scanning for cards...[0m
+[0;32mI (79093) RFID_NFC: Scanning for cards...[0m
+[0;32mI (79193) RFID_NFC: Scanning for cards...[0m
+[0;32mI (79413) RFID_NFC: Scanning for cards...[0m
+[0;32mI (79633) RFID_NFC: Scanning for cards...[0m
+[0;32mI (79853) RFID_NFC: Scanning for cards...[0m
+[0;32mI (80073) RFID_NFC: Scanning for cards...[0m
+[0;32mI (80293) RFID_NFC: Scanning for cards...[0m
+[0;32mI (80513) RFID_NFC: Scanning for cards...[0m
+[0;32mI (80733) RFID_NFC: Scanning for cards...[0m
+[0;32mI (80953) RFID_NFC: Scanning for cards...[0m
+[0;32mI (81173) RFID_NFC: Scanning for cards...[0m
+[0;32mI (81393) RFID_NFC: Scanning for cards...[0m
+[0;32mI (81613) RFID_NFC: Scanning for cards...[0m
+[0;32mI (81833) RFID_NFC: Scanning for cards...[0m
+[0;32mI (82053) RFID_NFC: Scanning for cards...[0m
+[0;32mI (82273) RFID_NFC: Scanning for cards...[0m
+[0;32mI (82493) RFID_NFC: Scanning for cards...[0m
+[0;32mI (82713) RFID_NFC: Scanning for cards...[0m
+[0;32mI (82933) RFID_NFC: Scanning for cards...[0m
+[0;32mI (83153) RFID_NFC: Scanning for cards...[0m
+[0;32mI (83373) RFID_NFC: Scanning for cards...[0m
+[0;32mI (83593) RFID_NFC: Scanning for cards...[0m
+[0;32mI (83813) RFID_NFC: Scanning for cards...[0m
+[0;32mI (84033) RFID_NFC: Scanning for cards...[0m
+[0;32mI (84253) RFID_NFC: Scanning for cards...[0m
+[0;32mI (84473) RFID_NFC: Scanning for cards...[0m
+[0;32mI (84693) RFID_NFC: Scanning for cards...[0m
+[0;32mI (84913) RFID_NFC: Scanning for cards...[0m
+[0;32mI (85133) RFID_NFC: Scanning for cards...[0m
+[0;32mI (85353) RFID_NFC: Scanning for cards...[0m
+[0;32mI (85573) RFID_NFC: Scanning for cards...[0m
+[0;32mI (85793) RFID_NFC: Scanning for cards...[0m
+[0;32mI (86013) RFID_NFC: Scanning for cards...[0m
+[0;32mI (86233) RFID_NFC: Scanning for cards...[0m
+[0;32mI (86453) RFID_NFC: Scanning for cards...[0m
+[0;32mI (86673) RFID_NFC: Scanning for cards...[0m
+[0;32mI (86893) RFID_NFC: Scanning for cards...[0m
+[0;32mI (87113) RFID_NFC: Scanning for cards...[0m
+[0;32mI (87333) RFID_NFC: Scanning for cards...[0m
+[0;32mI (87553) RFID_NFC: Scanning for cards...[0m
+[0;32mI (87773) RFID_NFC: Scanning for cards...[0m
+[0;32mI (87993) RFID_NFC: Scanning for cards...[0m
+[0;32mI (88213) RFID_NFC: Scanning for cards...[0m
+[0;32mI (88433) RFID_NFC: Scanning for cards...[0m
+[0;32mI (88653) RFID_NFC: Scanning for cards...[0m
+[0;32mI (88873) RFID_NFC: Scanning for cards...[0m
+[0;32mI (88973) RFID_NFC: Scanning for cards...[0m
+[0;32mI (89193) RFID_NFC: Scanning for cards...[0m
+[0;32mI (89413) RFID_NFC: Scanning for cards...[0m
+[0;32mI (89633) RFID_NFC: Scanning for cards...[0m
+[0;32mI (89853) RFID_NFC: Scanning for cards...[0m
+[0;32mI (90073) RFID_NFC: Scanning for cards...[0m
+[0;32mI (90293) RFID_NFC: Scanning for cards...[0m
+[0;32mI (90513) RFID_NFC: Scanning for cards...[0m
+[0;32mI (90733) RFID_NFC: Scanning for cards...[0m
+[0;32mI (90953) RFID_NFC: Scanning for cards...[0m
+[0;32mI (91173) RFID_NFC: Scanning for cards...[0m
+[0;32mI (91393) RFID_NFC: Scanning for cards...[0m
+[0;32mI (91613) RFID_NFC: Scanning for cards...[0m
+[0;32mI (91833) RFID_NFC: Scanning for cards...[0m
+[0;32mI (92053) RFID_NFC: Scanning for cards...[0m
+[0;32mI (92273) RFID_NFC: Scanning for cards...[0m
+[0;32mI (92493) RFID_NFC: Scanning for cards...[0m
+[0;32mI (92713) RFID_NFC: Scanning for cards...[0m
+[0;32mI (92933) RFID_NFC: Scanning for cards...[0m
+[0;32mI (93153) RFID_NFC: Scanning for cards...[0m
+[0;32mI (93373) RFID_NFC: Scanning for cards...[0m
+[0;32mI (93593) RFID_NFC: Scanning for cards...[0m
+[0;32mI (93813) RFID_NFC: Scanning for cards...[0m
+[0;32mI (94033) RFID_NFC: Scanning for cards...[0m
+[0;32mI (94253) RFID_NFC: Scanning for cards...[0m
+[0;32mI (94473) RFID_NFC: Scanning for cards...[0m
+[0;32mI (94693) RFID_NFC: Scanning for cards...[0m
+[0;32mI (94913) RFID_NFC: Scanning for cards...[0m
+[0;32mI (95133) RFID_NFC: Scanning for cards...[0m
+[0;32mI (95353) RFID_NFC: Scanning for cards...[0m
+[0;32mI (95573) RFID_NFC: Scanning for cards...[0m
+[0;32mI (95793) RFID_NFC: Scanning for cards...[0m
+[0;32mI (96013) RFID_NFC: Scanning for cards...[0m
+[0;32mI (96233) RFID_NFC: Scanning for cards...[0m
+[0;32mI (96453) RFID_NFC: Scanning for cards...[0m
+[0;32mI (96673) RFID_NFC: Scanning for cards...[0m
+[0;32mI (96893) RFID_NFC: Scanning for cards...[0m
+[0;32mI (97113) RFID_NFC: Scanning for cards...[0m
+[0;32mI (97333) RFID_NFC: Scanning for cards...[0m
+[0;32mI (97553) RFID_NFC: Scanning for cards...[0m
+[0;32mI (97773) RFID_NFC: Scanning for cards...[0m
+[0;32mI (97993) RFID_NFC: Scanning for cards...[0m
+[0;32mI (98213) RFID_NFC: Scanning for cards...[0m
+[0;32mI (98433) RFID_NFC: Scanning for cards...[0m
+[0;32mI (98433) RFID_NFC: Card ID: 4518C905[0m
+[0;32mI (98433) RFID_NFC: === Card detected and read successfully ===[0m
+[0;32mI (99533) RFID_NFC: Scanning for cards...[0m
+[0;32mI (99753) RFID_NFC: Scanning for cards...[0m
+[0;32mI (99973) RFID_NFC: Scanning for cards...[0m
+[0;32mI (100193) RFID_NFC: Scanning for cards...[0m
+[0;32mI (100413) RFID_NFC: Scanning for cards...[0m
+[0;32mI (100633) RFID_NFC: Scanning for cards...[0m
+[0;32mI (100853) RFID_NFC: Scanning for cards...[0m
+[0;32mI (100953) RFID_NFC: Scanning for cards...[0m
+[0;32mI (101173) RFID_NFC: Scanning for cards...[0m
+[0;32mI (101173) RFID_NFC: Card ID: 4518C905[0m
+[0;32mI (101173) RFID_NFC: === Card detected and read successfully ===[0m
+[0;32mI (102273) RFID_NFC: Scanning for cards...[0m
+[0;32mI (102493) RFID_NFC: Scanning for cards...[0m
+[0;32mI (102713) RFID_NFC: Scanning for cards...[0m
+[0;32mI (102933) RFID_NFC: Scanning for cards...[0m
+[0;32mI (103153) RFID_NFC: Scanning for cards...[0m
+[0;32mI (103373) RFID_NFC: Scanning for cards...[0m
+[0;32mI (103373) RFID_NFC: Card ID: 4518C905[0m
+[0;32mI (103373) RFID_NFC: === Card detected and read successfully ===[0m
+[0;32mI (104473) RFID_NFC: Scanning for cards...[0m
+[0;32mI (104693) RFID_NFC: Scanning for cards...[0m
+[0;32mI (104913) RFID_NFC: Scanning for cards...[0m
+[0;32mI (105133) RFID_NFC: Scanning for cards...[0m
+[0;32mI (105353) RFID_NFC: Scanning for cards...[0m
+[0;32mI (105573) RFID_NFC: Scanning for cards...[0m
+[0;32mI (105793) RFID_NFC: Scanning for cards...[0m
+[0;32mI (106013) RFID_NFC: Scanning for cards...[0m
+[0;32mI (106233) RFID_NFC: Scanning for cards...[0m
+[0;32mI (106453) RFID_NFC: Scanning for cards...[0m
+[0;32mI (106673) RFID_NFC: Scanning for cards...[0m
+[0;32mI (106893) RFID_NFC: Scanning for cards...[0m
+[0;32mI (106893) RFID_NFC: Card ID: 43FA3CEE[0m
+[0;32mI (106893) RFID_NFC: === Card detected and read successfully ===[0m
+[0;32mI (107993) RFID_NFC: Scanning for cards...[0m
+[0;32mI (108213) RFID_NFC: Scanning for cards...[0m
+[0;32mI (108433) RFID_NFC: Scanning for cards...[0m
+[0;32mI (108653) RFID_NFC: Scanning for cards...[0m
+[0;32mI (108873) RFID_NFC: Scanning for cards...[0m
+[0;32mI (109093) RFID_NFC: Scanning for cards...[0m
+[0;32mI (109093) RFID_NFC: Card ID: 43FA3CEE[0m
+[0;32mI (109093) RFID_NFC: === Card detected and read successfully ===[0m
+[0;32mI (110193) RFID_NFC: Scanning for cards...[0m
+[0;32mI (110413) RFID_NFC: Scanning for cards...[0m
+[0;32mI (110633) RFID_NFC: Scanning for cards...[0m
+[0;32mI (110853) RFID_NFC: Scanning for cards...[0m
+[0;32mI (111073) RFID_NFC: Scanning for cards...[0m
+[0;32mI (111073) RFID_NFC: Card ID: 43FA3CEE[0m
+[0;32mI (111073) RFID_NFC: === Card detected and read successfully ===[0m
+[0;32mI (112173) RFID_NFC: Scanning for cards...[0m
+[0;32mI (112393) RFID_NFC: Scanning for cards...[0m
+[0;32mI (112613) RFID_NFC: Scanning for cards...[0m
+[0;32mI (112833) RFID_NFC: Scanning for cards...[0m
+[0;32mI (113053) RFID_NFC: Scanning for cards...[0m
+[0;32mI (113273) RFID_NFC: Scanning for cards...[0m
+[0;32mI (113493) RFID_NFC: Scanning for cards...[0m
+[0;32mI (113713) RFID_NFC: Scanning for cards...[0m
+[0;32mI (113933) RFID_NFC: Scanning for cards...[0m
+[0;32mI (114153) RFID_NFC: Scanning for cards...[0m
+[0;32mI (114373) RFID_NFC: Scanning for cards...[0m
+[0;32mI (114593) RFID_NFC: Scanning for cards...[0m
+[0;32mI (114813) RFID_NFC: Scanning for cards...[0m
+[0;32mI (115033) RFID_NFC: Scanning for cards...[0m
+[0;32mI (115253) RFID_NFC: Scanning for cards...[0m
+[0;32mI (115473) RFID_NFC: Scanning for cards...[0m
+[0;32mI (115693) RFID_NFC: Scanning for cards...[0m
+[0;32mI (115913) RFID_NFC: Scanning for cards...[0m
+[0;32mI (116133) RFID_NFC: Scanning for cards...[0m
+[0;32mI (116353) RFID_NFC: Scanning for cards...[0m
+[0;32mI (116573) RFID_NFC: Scanning for cards...[0m
+[0;32mI (116793) RFID_NFC: Scanning for cards...[0m
+[0;32mI (117013) RFID_NFC: Scanning for cards...[0m
+[0;32mI (117233) RFID_NFC: Scanning for cards...[0m
+[0;32mI (117453) RFID_NFC: Scanning for cards...[0m
+[0;32mI (117673) RFID_NFC: Scanning for cards...[0m
+[0;32mI (117893) RFID_NFC: Scanning for cards...[0m
+[0;32mI (118113) RFID_NFC: Scanning for cards...[0m
+[0;32mI (118333) RFID_NFC: Scanning for cards...[0m
+[0;32mI (118553) RFID_NFC: Scanning for cards...[0m
+[0;32mI (118773) RFID_NFC: Scanning for cards...[0m
+[0;32mI (118993) RFID_NFC: Scanning for cards...[0m
+[0;32mI (119213) RFID_NFC: Scanning for cards...[0m
+[0;32mI (119433) RFID_NFC: Scanning for cards...[0m
+[0;32mI (119653) RFID_NFC: Scanning for cards...[0m
+[0;32mI (119873) RFID_NFC: Scanning for cards...[0m
+[0;32mI (120093) RFID_NFC: Scanning for cards...[0m
+[0;32mI (120313) RFID_NFC: Scanning for cards...[0m
+[0;32mI (120533) RFID_NFC: Scanning for cards...[0m
+[0;32mI (120753) RFID_NFC: Scanning for cards...[0m
+[0;32mI (120973) RFID_NFC: Scanning for cards...[0m
+[0;32mI (121193) RFID_NFC: Scanning for cards...[0m
+[0;32mI (121413) RFID_NFC: Scanning for cards...[0m
+[0;32mI (121633) RFID_NFC: Scanning for cards...[0m
+[0;32mI (121853) RFID_NFC: Scanning for cards...[0m
+[0;32mI (122073) RFID_NFC: Scanning for cards...[0m
+[0;32mI (122293) RFID_NFC: Scanning for cards...[0m
+[0;32mI (122513) RFID_NFC: Scanning for cards...[0m
+[0;32mI (122733) RFID_NFC: Scanning for cards...[0m
+[0;32mI (122953) RFID_NFC: Scanning for cards...[0m
+[0;32mI (123173) RFID_NFC: Scanning for cards...[0m
+[0;32mI (123393) RFID_NFC: Scanning for cards...[0m
+[0;32mI (123613) RFID_NFC: Scanning for cards...[0m
+[0;32mI (123833) RFID_NFC: Scanning for cards...[0m
+[0;32mI (124053) RFID_NFC: Scanning for cards...[0m
+[0;32mI (124273) RFID_NFC: Scanning for cards...[0m

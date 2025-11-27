@@ -1,0 +1,430 @@
+ets Jul 29 2019 12:21:46
+
+rst:0x1 (POWERON_RESET),boot:0x13 (SPI_FAST_FLASH_BOOT)
+configsip: 0, SPIWP:0xee
+clk_drv:0x00,q_drv:0x00,d_drv:0x00,cs0_drv:0x00,hd_drv:0x00,wp_drv:0x00
+mode:DIO, clock div:2
+load:0x3fff0030,len:7176
+load:0x40078000,len:15564
+ho 0 tail 12 room 4
+load:0x40080400,len:4
+load:0x40080404,len:3904
+entry 0x40080640
+[0;32mI (31) boot: ESP-IDF v5.3.1-dirty 2nd stage bootloader[0m
+[0;32mI (31) boot: compile time Nov 27 2025 11:15:13[0m
+[0;32mI (31) boot: Multicore bootloader[0m
+[0;32mI (36) boot: chip revision: v3.1[0m
+[0;32mI (40) boot.esp32: SPI Speed      : 40MHz[0m
+[0;32mI (44) boot.esp32: SPI Mode       : DIO[0m
+[0;32mI (49) boot.esp32: SPI Flash Size : 2MB[0m
+[0;32mI (53) boot: Enabling RNG early entropy source...[0m
+[0;32mI (59) boot: Partition Table:[0m
+[0;32mI (62) boot: ## Label            Usage          Type ST Offset   Length[0m
+[0;32mI (70) boot:  0 nvs              WiFi data        01 02 00009000 00006000[0m
+[0;32mI (77) boot:  1 phy_init         RF data          01 01 0000f000 00001000[0m
+[0;32mI (85) boot:  2 factory          factory app      00 00 00010000 00100000[0m
+[0;32mI (92) boot: End of partition table[0m
+[0;32mI (96) esp_image: segment 0: paddr=00010020 vaddr=3f400020 size=28d68h (167272) map[0m
+[0;32mI (162) esp_image: segment 1: paddr=00038d90 vaddr=3ffb0000 size=04098h ( 16536) load[0m
+[0;32mI (169) esp_image: segment 2: paddr=0003ce30 vaddr=40080000 size=031e8h ( 12776) load[0m
+[0;32mI (174) esp_image: segment 3: paddr=00040020 vaddr=400d0020 size=a8a20h (690720) map[0m
+[0;32mI (413) esp_image: segment 4: paddr=000e8a48 vaddr=400831e8 size=170a0h ( 94368) load[0m
+[0;32mI (463) boot: Loaded app from partition at offset 0x10000[0m
+[0;32mI (463) boot: Disabling RNG early entropy source...[0m
+[0;32mI (475) cpu_start: Multicore app[0m
+[0;32mI (484) cpu_start: Pro cpu start user code[0m
+[0;32mI (484) cpu_start: cpu freq: 160000000 Hz[0m
+[0;32mI (484) app_init: Application information:[0m
+[0;32mI (487) app_init: Project name:     RFID_NFC[0m
+[0;32mI (492) app_init: App version:      1[0m
+[0;32mI (496) app_init: Compile time:     Nov 27 2025 11:15:03[0m
+[0;32mI (502) app_init: ELF file SHA256:  e9883d186...[0m
+[0;32mI (507) app_init: ESP-IDF:          v5.3.1-dirty[0m
+[0;32mI (513) efuse_init: Min chip rev:     v0.0[0m
+[0;32mI (517) efuse_init: Max chip rev:     v3.99 [0m
+[0;32mI (522) efuse_init: Chip rev:         v3.1[0m
+[0;32mI (527) heap_init: Initializing. RAM available for dynamic allocation:[0m
+[0;32mI (534) heap_init: At 3FFAE6E0 len 00001920 (6 KiB): DRAM[0m
+[0;32mI (540) heap_init: At 3FFB8910 len 000276F0 (157 KiB): DRAM[0m
+[0;32mI (547) heap_init: At 3FFE0440 len 00003AE0 (14 KiB): D/IRAM[0m
+[0;32mI (553) heap_init: At 3FFE4350 len 0001BCB0 (111 KiB): D/IRAM[0m
+[0;32mI (559) heap_init: At 4009A288 len 00005D78 (23 KiB): IRAM[0m
+[0;32mI (567) spi_flash: detected chip: generic[0m
+[0;32mI (570) spi_flash: flash io: dio[0m
+[0;33mW (574) spi_flash: Detected size(4096k) larger than the size in the binary image header(2048k). Using the size in the binary image header.[0m
+[0;33mW (587) i2c: This driver is an old driver, please migrate your application code to adapt `driver/i2c_master.h`[0m
+[0;32mI (599) main_task: Started on CPU0[0m
+[0;32mI (609) main_task: Calling app_main()[0m
+[0;32mI (609) RFID_NFC: Starting RFID NFC application...[0m
+[0;32mI (609) RFID_READER: Initializing MFRC522...[0m
+[0;32mI (609) gpio: GPIO[17]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+[0;32mI (659) RFID_READER: MFRC522 Version: 0xB2 (expected 0x91 or 0x92)[0m
+[0;33mW (659) RFID_READER: Unknown version, but may still work[0m
+[0;32mI (659) KEYPAD: Initializing 4x3 keypad...[0m
+[0;32mI (659) gpio: GPIO[12]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+[0;32mI (669) gpio: GPIO[13]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+[0;32mI (679) gpio: GPIO[14]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+[0;32mI (689) gpio: GPIO[15]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+[0;32mI (699) gpio: GPIO[25]| InputEn: 1| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (709) gpio: GPIO[26]| InputEn: 1| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (719) gpio: GPIO[27]| InputEn: 1| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (729) KEYPAD: Keypad initialized[0m
+[0;32mI (729) KEYPAD:   Rows: 12, 13, 14, 15[0m
+[0;32mI (739) KEYPAD:   Cols: 25, 26, 27[0m
+[0;32mI (739) LCD_I2C: Initializing LCD 16x2 at address 0x27...[0m
+[0;32mI (749) LCD_I2C: I2C initialized (SDA=21, SCL=22)[0m
+[0;32mI (879) LCD_I2C: LCD initialized successfully[0m
+[0;32mI (929) HTTP_CLIENT: Initializing HTTP client...[0m
+[0;32mI (959) HTTP_CLIENT: ESP_WIFI_MODE_STA[0m
+[0;32mI (959) HTTP_CLIENT: WiFi connection attempt 1/10[0m
+[0;32mI (969) wifi:wifi driver task: 3ffc1f88, prio:23, stack:6656, core=0[0m
+[0;32mI (979) wifi:wifi firmware version: ccaebfa[0m
+[0;32mI (979) wifi:wifi certification version: v7.0[0m
+[0;32mI (979) wifi:config NVS flash: enabled[0m
+[0;32mI (979) wifi:config nano formating: disabled[0m
+[0;32mI (989) wifi:Init data frame dynamic rx buffer num: 32[0m
+[0;32mI (989) wifi:Init static rx mgmt buffer num: 5[0m
+[0;32mI (999) wifi:Init management short buffer num: 32[0m
+[0;32mI (999) wifi:Init dynamic tx buffer num: 32[0m
+[0;32mI (1009) wifi:Init static rx buffer size: 1600[0m
+[0;32mI (1009) wifi:Init static rx buffer num: 10[0m
+[0;32mI (1009) wifi:Init dynamic rx buffer num: 32[0m
+[0;32mI (1019) wifi_init: rx ba win: 6[0m
+[0;32mI (1019) wifi_init: accept mbox: 6[0m
+[0;32mI (1019) wifi_init: tcpip mbox: 32[0m
+[0;32mI (1029) wifi_init: udp mbox: 6[0m
+[0;32mI (1029) wifi_init: tcp mbox: 6[0m
+[0;32mI (1039) wifi_init: tcp tx win: 5760[0m
+[0;32mI (1039) wifi_init: tcp rx win: 5760[0m
+[0;32mI (1049) wifi_init: tcp mss: 1440[0m
+[0;32mI (1049) wifi_init: WiFi IRAM OP enabled[0m
+[0;32mI (1049) wifi_init: WiFi RX IRAM OP enabled[0m
+[0;32mI (1059) phy_init: phy_version 4830,54550f7,Jun 20 2024,14:22:08[0m
+[0;32mI (1149) wifi:mode : sta (14:08:08:ab:a4:6c)[0m
+[0;32mI (1149) wifi:enable tsf[0m
+[0;32mI (1149) HTTP_CLIENT: wifi_init_sta finished.[0m
+[0;32mI (1149) HTTP_CLIENT: Starting WiFi connection...[0m
+[0;32mI (1179) wifi:new:<5,0>, old:<1,0>, ap:<255,255>, sta:<5,0>, prof:1, snd_ch_cfg:0x0[0m
+[0;32mI (1189) wifi:state: init -> auth (0xb0)[0m
+[0;32mI (2189) wifi:state: auth -> init (0x200)[0m
+[0;32mI (2199) wifi:new:<5,0>, old:<5,0>, ap:<255,255>, sta:<5,0>, prof:1, snd_ch_cfg:0x0[0m
+[0;33mW (2199) HTTP_CLIENT: Retry to connect to the AP (attempt 1/5)[0m
+[0;33mW (4619) HTTP_CLIENT: Retry to connect to the AP (attempt 2/5)[0m
+[0;32mI (4619) wifi:new:<5,0>, old:<5,0>, ap:<255,255>, sta:<5,0>, prof:1, snd_ch_cfg:0x0[0m
+[0;32mI (4629) wifi:state: init -> auth (0xb0)[0m
+[0;32mI (4639) wifi:state: auth -> assoc (0x0)[0m
+[0;32mI (4649) wifi:state: assoc -> run (0x10)[0m
+[0;32mI (4669) wifi:connected with P-503, aid = 3, channel 5, BW20, bssid = 20:87:ec:3a:f4:14[0m
+[0;32mI (4669) wifi:security: WPA2-PSK, phy: bgn, rssi: -40[0m
+[0;32mI (4679) wifi:pm start, type: 1[0m
+
+[0;32mI (4679) wifi:dp: 1, bi: 102400, li: 3, scale listen interval from 307200 us to 307200 us[0m
+[0;32mI (4729) wifi:AP's beacon interval = 102400 us, DTIM period = 1[0m
+[0;32mI (7689) esp_netif_handlers: sta ip: 192.168.101.48, mask: 255.255.255.0, gw: 192.168.101.1[0m
+[0;32mI (7689) HTTP_CLIENT: Got IP Address: 192.168.101.48[0m
+[0;32mI (7689) HTTP_CLIENT: ========================================[0m
+[0;32mI (7699) HTTP_CLIENT: WiFi CONNECTED SUCCESSFULLY![0m
+[0;32mI (7699) HTTP_CLIENT: SSID: P-503[0m
+[0;32mI (7709) HTTP_CLIENT: ========================================[0m
+[0;32mI (7709) HTTP_CLIENT: HTTP client initialized successfully[0m
+[0;32mI (13989) KEYPAD: Key pressed: '1'[0m
+[0;32mI (18769) wifi:<ba-add>idx:0 (ifx:0, 20:87:ec:3a:f4:14), tid:0, ssn:1, winSize:64[0m
+[0;32mI (23949) KEYPAD: Key pressed: '2'[0m
+[0;32mI (23949) RFID_NFC: Press # to confirm or continue entering[0m
+[0;32mI (27079) KEYPAD: Key pressed: '#'[0m
+[0;32mI (29159) RFID_NFC: Selected product ID: 2 - Com Tam - 30000 VND[0m
+[0;32mI (29159) RFID_NFC: You selected product ID: 2[0m
+[0;32mI (35699) KEYPAD: Key pressed: '2'[0m
+[0;32mI (41749) KEYPAD: Key pressed: '1'[0m
+[0;32mI (50449) KEYPAD: Key pressed: '1'[0m
+[0;32mI (50449) RFID_NFC: Press # to confirm or continue entering[0m
+[0;32mI (54039) KEYPAD: Key pressed: '#'[0m
+[0;32mI (56119) RFID_NFC: Selected product ID: 1 - Pho Bo - 35000 VND[0m
+[0;32mI (56119) RFID_NFC: You selected product ID: 1[0m
+[0;32mI (58239) KEYPAD: Key pressed: '1'[0m
+[0;32mI (60939) RFID_NFC: Card ID: 43FA3CEE[0m
+[0;32mI (61499) HTTP_CLIENT: Verifying card: 43FA3CEE[0m
+[0;32mI (61749) HTTP_CLIENT: HTTP GET Status = 200[0m
+[0;32mI (61749) HTTP_CLIENT: Response: {"exists":true,"card_id":"43FA3CEE"}[0m
+[0;32mI (61749) HTTP_CLIENT: Card exists in database[0m
+[0;32mI (61759) HTTP_CLIENT: HTTP_EVENT_DISCONNECTED[0m
+[0;32mI (64859) KEYPAD: Key pressed: '1'[0m
+[0;32mI (65529) KEYPAD: Key pressed: '2'[0m
+[0;32mI (66959) KEYPAD: Key pressed: '3'[0m
+[0;32mI (68739) KEYPAD: Key pressed: '4'[0m
+[0;32mI (69909) KEYPAD: Key pressed: '#'[0m
+[0;32mI (69909) RFID_NFC: Password entered: 1234[0m
+[0;32mI (69969) HTTP_CLIENT: Verifying password for card: 43FA3CEE[0m
+[0;32mI (70259) HTTP_CLIENT: HTTP POST Status = 401[0m
+[0;32mI (70259) HTTP_CLIENT: Response: {"detail":"Wrong password"}[0m
+[0;31mE (70259) HTTP_CLIENT: ========================================[0m
+[0;31mE (70259) HTTP_CLIENT: ✗ WRONG PASSWORD![0m
+[0;31mE (70269) HTTP_CLIENT: ========================================[0m
+[0;32mI (70279) HTTP_CLIENT: HTTP_EVENT_DISCONNECTED[0m
+[0;32mI (86289) KEYPAD: Key pressed: '1'[0m
+[0;32mI (88179) KEYPAD: Key pressed: '1'[0m
+[0;32mI (88179) RFID_NFC: Press # to confirm or continue entering[0m
+[0;32mI (95429) KEYPAD: Key pressed: '#'[0m
+[0;32mI (97509) RFID_NFC: Selected product ID: 1 - Pho Bo - 35000 VND[0m
+[0;32mI (97509) RFID_NFC: You selected product ID: 1[0m
+[0;32mI (99179) KEYPAD: Key pressed: '1'[0m
+[0;32mI (108919) RFID_NFC: Card ID: 4518C905[0m
+[0;32mI (109479) HTTP_CLIENT: Verifying card: 4518C905[0m
+[0;32mI (109759) HTTP_CLIENT: HTTP GET Status = 404[0m
+[0;32mI (109759) HTTP_CLIENT: Response: {"detail":"Card not found"}[0m
+[0;33mW (109759) HTTP_CLIENT: Card NOT found in database[0m
+[0;32mI (109759) HTTP_CLIENT: HTTP_EVENT_DISCONNECTED[0m
+[0;31mE (109879) RFID_NFC: ========================================[0m
+[0;31mE (109879) RFID_NFC: ✗ THẺ KHÔNG HỢP LỆ![0m
+[0;31mE (109879) RFID_NFC: Card ID: 4518C905[0m
+[0;31mE (109889) RFID_NFC: ========================================[0m
+[0;32mI (122849) KEYPAD: Key pressed: '1'[0m
+[0;32mI (127909) KEYPAD: Key pressed: '1'[0m
+[0;32mI (127909) RFID_NFC: Press # to confirm or continue entering[0m
+[0;32mI (129779) KEYPAD: Key pressed: '#'[0m
+[0;32mI (131849) RFID_NFC: Selected product ID: 1 - Pho Bo - 35000 VND[0m
+[0;32mI (131849) RFID_NFC: You selected product ID: 1[0m
+[0;32mI (133729) KEYPAD: Key pressed: '1'[0m
+[0;32mI (136869) RFID_NFC: Card ID: 43FA3CEE[0m
+[0;32mI (137429) HTTP_CLIENT: Verifying card: 43FA3CEE[0m
+[0;32mI (137509) HTTP_CLIENT: HTTP GET Status = 200[0m
+[0;32mI (137509) HTTP_CLIENT: Response: {"exists":true,"card_id":"43FA3CEE"}[0m
+[0;32mI (137509) HTTP_CLIENT: Card exists in database[0m
+[0;32mI (137509) HTTP_CLIENT: HTTP_EVENT_DISCONNECTED[0m
+[0;32mI (143679) KEYPAD: Key pressed: '1'[0m
+[0;32mI (144319) KEYPAD: Key pressed: '2'[0m
+[0;32mI (144939) KEYPAD: Key pressed: '3'[0m
+[0;32mI (145889) KEYPAD: Key pressed: '5'[0m
+[0;32mI (147559) KEYPAD: Key pressed: '#'[0m
+[0;32mI (147559) RFID_NFC: Password entered: 1235[0m
+[0;32mI (147619) HTTP_CLIENT: Verifying password for card: 43FA3CEE[0m
+[0;32mI (147749) HTTP_CLIENT: HTTP POST Status = 200[0m
+[0;32mI (147749) HTTP_CLIENT: Response: {"status":"success","message":"Password correct"}[0m
+[0;32mI (147759) HTTP_CLIENT: ========================================[0m
+[0;32mI (147759) HTTP_CLIENT: ✓ PASSWORD CORRECT![0m
+[0;32mI (147769) HTTP_CLIENT: ========================================[0m
+[0;32mI (147769) HTTP_CLIENT: HTTP_EVENT_DISCONNECTED[0m
+[0;32mI (149859) HTTP_CLIENT: Checking balance for card: 43FA3CEE[0m
+[0;32mI (149999) HTTP_CLIENT: HTTP GET Status = 200[0m
+[0;32mI (149999) HTTP_CLIENT: Response: {"balance":15000.0,"card_id":"43FA3CEE"}[0m
+[0;32mI (150009) HTTP_CLIENT: Account balance: 15000 VND[0m
+[0;32mI (150009) HTTP_CLIENT: HTTP_EVENT_DISCONNECTED[0m
+[0;31mE (150019) RFID_NFC: ========================================[0m
+[0;31mE (150019) RFID_NFC: ✗ SỐ DƯ KHÔNG ĐỦ![0m
+[0;31mE (150029) RFID_NFC: Balance: 15000 VND[0m
+[0;31mE (150029) RFID_NFC: Required: 35000 VND[0m
+[0;31mE (150039) RFID_NFC: ========================================[0m
+[0;32mI (217819) KEYPAD: Key pressed: '2'[0m
+[0;32mI (222059) RFID_NFC: Card ID: 43FA3CEE[0m
+[0;32mI (228959) KEYPAD: Key pressed: '1'[0m
+[0;32mI (229719) KEYPAD: Key pressed: '4'[0m
+[0;32mI (230469) KEYPAD: Key pressed: '7'[0m
+[0;32mI (231539) KEYPAD: Key pressed: '9'[0m
+[0;32mI (232529) KEYPAD: Key pressed: '#'[0m
+[0;32mI (232529) RFID_NFC: Password entered: 1479[0m
+[0;32mI (232529) HTTP_CLIENT: Sending card data: {"id_card":"43FA3CEE","password":"1479"}[0m
+[0;32mI (232759) HTTP_CLIENT: HTTP POST Status = 409, content_length = 117[0m
+[0;32mI (232759) HTTP_CLIENT: Response: {"detail":{"error":"Card already exists","message":"Thẻ đã tồn tại trong hệ thống","card_id":"43FA3CEE"}}[0m
+[0;31mE (232829) HTTP_CLIENT: ========================================[0m
+[0;31mE (232829) HTTP_CLIENT: ✗ LỖI: THẺ ĐÃ TỒN TẠI TRONG HỆ THỐNG![0m
+[0;31mE (232829) HTTP_CLIENT: Card ID: 43FA3CEE[0m
+[0;31mE (232829) HTTP_CLIENT: Response: {"detail":{"error":"Card already exists","message":"Thẻ đã tồn tại trong hệ thống","card_id":"43FA3CEE"}}[0m
+[0;31mE (232849) HTTP_CLIENT: ========================================[0m
+[0;32mI (244639) KEYPAD: Key pressed: '2'[0m
+[0;32mI (247999) RFID_NFC: Card ID: 4518C905[0m
+[0;32mI (252399) KEYPAD: Key pressed: '1'[0m
+[0;32mI (253169) KEYPAD: Key pressed: '4'[0m
+[0;32mI (254129) KEYPAD: Key pressed: '7'[0m
+[0;32mI (254879) KEYPAD: Key pressed: '9'[0m
+[0;32mI (256719) KEYPAD: Key pressed: '#'[0m
+[0;32mI (256719) RFID_NFC: Password entered: 1479[0m
+[0;32mI (256719) HTTP_CLIENT: Sending card data: {"id_card":"4518C905","password":"1479"}[0m
+[0;32mI (256999) HTTP_CLIENT: HTTP POST Status = 200, content_length = 161[0m
+[0;32mI (256999) HTTP_CLIENT: Response: {"id_card":"4518C905","password":"1479","updated_at":"2025-11-27T15:29:34.953603","id_student":null,"id":4,"so_du":0.0,"created_at":"2025-11-27T15:29:34.953603"}[0m
+[0;32mI (257019) HTTP_CLIENT: ========================================[0m
+[0;32mI (257019) HTTP_CLIENT: ✓ CARD DATA SENT SUCCESSFULLY![0m
+[0;32mI (257029) HTTP_CLIENT: ========================================[0m
+[0;32mI (257039) HTTP_CLIENT: HTTP_EVENT_DISCONNECTED[0m
+Guru Meditation Error: Core  0 panic'ed (StoreProhibited). Exception was unhandled.
+
+Core  0 register dump:
+PC      : 0x400915af  PS      : 0x00060a33  A0      : 0x80091413  A1      : 0x3ffbb350  
+A2      : 0x3ffb8924  A3      : 0x3ffc8f24  A4      : 0x00000006  A5      : 0x3ffbb3a0  
+A6      : 0x3ffc920c  A7      : 0x3ffc8f1c  A8      : 0xa15fee84  A9      : 0x61635f66  
+A10     : 0x00000001  A11     : 0xffffffff  A12     : 0x00000004  A13     : 0x00060a23  
+A14     : 0x3ffc9274  A15     : 0x0000cdcd  SAR     : 0x00000011  EXCCAUSE: 0x0000001d  
+EXCVADDR: 0xa15fee84  LBEG    : 0x4000c2e0  LEND    : 0x4000c2f6  LCOUNT  : 0xffffffff  
+
+
+Backtrace: 0x400915ac:0x3ffbb350 0x40091410:0x3ffbb370 0x400824c6:0x3ffbb390 0x400941d5:0x3ffbb3b0 0x400e5c30:0x3ffbb3d0 0x400d8acf:0x3ffbb3f0 0x400d7dfa:0x3ffbbdc0 0x400d81ce:0x3ffbbde0 0x401769b7:0x3ffbbe10 0x4008c51d:0x3ffbbe40
+
+
+
+
+ELF file SHA256: e9883d186
+
+Rebooting...
+ets Jul 29 2019 12:21:46
+
+rst:0xc (SW_CPU_RESET),boot:0x13 (SPI_FAST_FLASH_BOOT)
+configsip: 0, SPIWP:0xee
+clk_drv:0x00,q_drv:0x00,d_drv:0x00,cs0_drv:0x00,hd_drv:0x00,wp_drv:0x00
+mode:DIO, clock div:2
+load:0x3fff0030,len:7176
+load:0x40078000,len:15564
+ho 0 tail 12 room 4
+load:0x40080400,len:4
+load:0x40080404,len:3904
+entry 0x40080640
+[0;32mI (31) boot: ESP-IDF v5.3.1-dirty 2nd stage bootloader[0m
+[0;32mI (31) boot: compile time Nov 27 2025 11:15:13[0m
+[0;32mI (31) boot: Multicore bootloader[0m
+[0;32mI (36) boot: chip revision: v3.1[0m
+[0;32mI (40) boot.esp32: SPI Speed      : 40MHz[0m
+[0;32mI (44) boot.esp32: SPI Mode       : DIO[0m
+[0;32mI (49) boot.esp32: SPI Flash Size : 2MB[0m
+[0;32mI (53) boot: Enabling RNG early entropy source...[0m
+[0;32mI (59) boot: Partition Table:[0m
+[0;32mI (62) boot: ## Label            Usage          Type ST Offset   Length[0m
+[0;32mI (70) boot:  0 nvs              WiFi data        01 02 00009000 00006000[0m
+[0;32mI (77) boot:  1 phy_init         RF data          01 01 0000f000 00001000[0m
+[0;32mI (85) boot:  2 factory          factory app      00 00 00010000 00100000[0m
+[0;32mI (92) boot: End of partition table[0m
+[0;32mI (96) esp_image: segment 0: paddr=00010020 vaddr=3f400020 size=28d68h (167272) map[0m
+[0;32mI (162) esp_image: segment 1: paddr=00038d90 vaddr=3ffb0000 size=04098h ( 16536) load[0m
+[0;32mI (168) esp_image: segment 2: paddr=0003ce30 vaddr=40080000 size=031e8h ( 12776) load[0m
+[0;32mI (174) esp_image: segment 3: paddr=00040020 vaddr=400d0020 size=a8a20h (690720) map[0m
+[0;32mI (413) esp_image: segment 4: paddr=000e8a48 vaddr=400831e8 size=170a0h ( 94368) load[0m
+[0;32mI (463) boot: Loaded app from partition at offset 0x10000[0m
+[0;32mI (463) boot: Disabling RNG early entropy source...[0m
+[0;32mI (475) cpu_start: Multicore app[0m
+[0;32mI (484) cpu_start: Pro cpu start user code[0m
+[0;32mI (484) cpu_start: cpu freq: 160000000 Hz[0m
+[0;32mI (484) app_init: Application information:[0m
+[0;32mI (487) app_init: Project name:     RFID_NFC[0m
+[0;32mI (492) app_init: App version:      1[0m
+[0;32mI (496) app_init: Compile time:     Nov 27 2025 11:15:03[0m
+[0;32mI (502) app_init: ELF file SHA256:  e9883d186...[0m
+[0;32mI (507) app_init: ESP-IDF:          v5.3.1-dirty[0m
+[0;32mI (512) efuse_init: Min chip rev:     v0.0[0m
+[0;32mI (517) efuse_init: Max chip rev:     v3.99 [0m
+[0;32mI (522) efuse_init: Chip rev:         v3.1[0m
+[0;32mI (527) heap_init: Initializing. RAM available for dynamic allocation:[0m
+[0;32mI (534) heap_init: At 3FFAE6E0 len 00001920 (6 KiB): DRAM[0m
+[0;32mI (540) heap_init: At 3FFB8910 len 000276F0 (157 KiB): DRAM[0m
+[0;32mI (546) heap_init: At 3FFE0440 len 00003AE0 (14 KiB): D/IRAM[0m
+[0;32mI (553) heap_init: At 3FFE4350 len 0001BCB0 (111 KiB): D/IRAM[0m
+[0;32mI (559) heap_init: At 4009A288 len 00005D78 (23 KiB): IRAM[0m
+[0;32mI (567) spi_flash: detected chip: generic[0m
+[0;32mI (570) spi_flash: flash io: dio[0m
+[0;33mW (574) spi_flash: Detected size(4096k) larger than the size in the binary image header(2048k). Using the size in the binary image header.[0m
+[0;33mW (587) i2c: This driver is an old driver, please migrate your application code to adapt `driver/i2c_master.h`[0m
+[0;32mI (599) main_task: Started on CPU0[0m
+[0;32mI (609) main_task: Calling app_main()[0m
+[0;32mI (609) RFID_NFC: Starting RFID NFC application...[0m
+[0;32mI (609) RFID_READER: Initializing MFRC522...[0m
+[0;32mI (609) gpio: GPIO[17]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+[0;32mI (659) RFID_READER: MFRC522 Version: 0xB2 (expected 0x91 or 0x92)[0m
+[0;33mW (659) RFID_READER: Unknown version, but may still work[0m
+[0;32mI (659) KEYPAD: Initializing 4x3 keypad...[0m
+[0;32mI (659) gpio: GPIO[12]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+[0;32mI (669) gpio: GPIO[13]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+[0;32mI (679) gpio: GPIO[14]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+[0;32mI (689) gpio: GPIO[15]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+[0;32mI (699) gpio: GPIO[25]| InputEn: 1| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (709) gpio: GPIO[26]| InputEn: 1| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (719) gpio: GPIO[27]| InputEn: 1| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (729) KEYPAD: Keypad initialized[0m
+[0;32mI (729) KEYPAD:   Rows: 12, 13, 14, 15[0m
+[0;32mI (739) KEYPAD:   Cols: 25, 26, 27[0m
+[0;32mI (739) LCD_I2C: Initializing LCD 16x2 at address 0x27...[0m
+[0;32mI (749) LCD_I2C: I2C initialized (SDA=21, SCL=22)[0m
+[0;32mI (879) LCD_I2C: LCD initialized successfully[0m
+[0;32mI (929) HTTP_CLIENT: Initializing HTTP client...[0m
+[0;32mI (959) HTTP_CLIENT: ESP_WIFI_MODE_STA[0m
+[0;32mI (959) HTTP_CLIENT: WiFi connection attempt 1/10[0m
+[0;32mI (969) wifi:wifi driver task: 3ffc1f88, prio:23, stack:6656, core=0[0m
+[0;32mI (979) wifi:wifi firmware version: ccaebfa[0m
+[0;32mI (979) wifi:wifi certification version: v7.0[0m
+[0;32mI (979) wifi:config NVS flash: enabled[0m
+[0;32mI (979) wifi:config nano formating: disabled[0m
+[0;32mI (989) wifi:Init data frame dynamic rx buffer num: 32[0m
+[0;32mI (989) wifi:Init static rx mgmt buffer num: 5[0m
+[0;32mI (999) wifi:Init management short buffer num: 32[0m
+[0;32mI (999) wifi:Init dynamic tx buffer num: 32[0m
+[0;32mI (1009) wifi:Init static rx buffer size: 1600[0m
+[0;32mI (1009) wifi:Init static rx buffer num: 10[0m
+[0;32mI (1009) wifi:Init dynamic rx buffer num: 32[0m
+[0;32mI (1019) wifi_init: rx ba win: 6[0m
+[0;32mI (1019) wifi_init: accept mbox: 6[0m
+[0;32mI (1019) wifi_init: tcpip mbox: 32[0m
+[0;32mI (1029) wifi_init: udp mbox: 6[0m
+[0;32mI (1029) wifi_init: tcp mbox: 6[0m
+[0;32mI (1039) wifi_init: tcp tx win: 5760[0m
+[0;32mI (1039) wifi_init: tcp rx win: 5760[0m
+[0;32mI (1049) wifi_init: tcp mss: 1440[0m
+[0;32mI (1049) wifi_init: WiFi IRAM OP enabled[0m
+[0;32mI (1049) wifi_init: WiFi RX IRAM OP enabled[0m
+[0;32mI (1059) phy_init: phy_version 4830,54550f7,Jun 20 2024,14:22:08[0m
+[0;33mW (1149) phy_init: saving new calibration data because of checksum failure, mode(0)[0m
+[0;32mI (1219) wifi:mode : sta (14:08:08:ab:a4:6c)[0m
+[0;32mI (1219) wifi:enable tsf[0m
+[0;32mI (1219) HTTP_CLIENT: wifi_init_sta finished.[0m
+[0;32mI (1219) HTTP_CLIENT: Starting WiFi connection...[0m
+[0;32mI (1239) wifi:new:<5,0>, old:<1,0>, ap:<255,255>, sta:<5,0>, prof:1, snd_ch_cfg:0x0[0m
+[0;32mI (1239) wifi:state: init -> auth (0xb0)[0m
+[0;32mI (2239) wifi:state: auth -> init (0x200)[0m
+[0;32mI (2259) wifi:new:<5,0>, old:<5,0>, ap:<255,255>, sta:<5,0>, prof:1, snd_ch_cfg:0x0[0m
+[0;33mW (2259) HTTP_CLIENT: Retry to connect to the AP (attempt 1/5)[0m
+[0;33mW (4679) HTTP_CLIENT: Retry to connect to the AP (attempt 2/5)[0m
+[0;32mI (4689) wifi:new:<5,0>, old:<5,0>, ap:<255,255>, sta:<5,0>, prof:1, snd_ch_cfg:0x0[0m
+[0;32mI (4689) wifi:state: init -> auth (0xb0)[0m
+[0;32mI (4699) wifi:state: auth -> assoc (0x0)[0m
+[0;32mI (4709) wifi:state: assoc -> run (0x10)[0m
+[0;32mI (4739) wifi:connected with P-503, aid = 3, channel 5, BW20, bssid = 20:87:ec:3a:f4:14[0m
+[0;32mI (4739) wifi:security: WPA2-PSK, phy: bgn, rssi: -44[0m
+[0;32mI (4739) wifi:pm start, type: 1[0m
+
+[0;32mI (4739) wifi:dp: 1, bi: 102400, li: 3, scale listen interval from 307200 us to 307200 us[0m
+[0;32mI (4829) wifi:AP's beacon interval = 102400 us, DTIM period = 1[0m
+[0;32mI (7749) esp_netif_handlers: sta ip: 192.168.101.48, mask: 255.255.255.0, gw: 192.168.101.1[0m
+[0;32mI (7749) HTTP_CLIENT: Got IP Address: 192.168.101.48[0m
+[0;32mI (7749) HTTP_CLIENT: ========================================[0m
+[0;32mI (7759) HTTP_CLIENT: WiFi CONNECTED SUCCESSFULLY![0m
+[0;32mI (7759) HTTP_CLIENT: SSID: P-503[0m
+[0;32mI (7769) HTTP_CLIENT: ========================================[0m
+[0;32mI (7769) HTTP_CLIENT: HTTP client initialized successfully[0m
+[0;32mI (14129) KEYPAD: Key pressed: '2'[0m
+[0;33mW (16829) RFID_READER: Anti-collision failed[0m
+[0;32mI (17149) RFID_NFC: Card ID: 4518C905[0m
+[0;32mI (46289) KEYPAD: Key pressed: '1'[0m
+[0;32mI (46929) KEYPAD: Key pressed: '4'[0m
+[0;32mI (47879) KEYPAD: Key pressed: '7'[0m
+[0;32mI (48479) KEYPAD: Key pressed: '8'[0m
+[0;32mI (49579) KEYPAD: Key pressed: '#'[0m
+[0;32mI (49579) RFID_NFC: Password entered: 1478[0m
+[0;32mI (49579) HTTP_CLIENT: Sending card data: {"id_card":"4518C905","password":"1478"}[0m
+[0;32mI (49599) wifi:<ba-add>idx:0 (ifx:0, 20:87:ec:3a:f4:14), tid:0, ssn:1, winSize:64[0m
+[0;32mI (50099) HTTP_CLIENT: HTTP POST Status = 409, content_length = 117[0m
+[0;32mI (50099) HTTP_CLIENT: Response: {"detail":{"error":"Card already exists","message":"Thẻ đã tồn tại trong hệ thống","card_id":"4518C905"}}[0m
+[0;31mE (50169) HTTP_CLIENT: ========================================[0m
+[0;31mE (50169) HTTP_CLIENT: ✗ LỖI: THẺ ĐÃ TỒN TẠI TRONG HỆ THỐNG![0m
+[0;31mE (50169) HTTP_CLIENT: Card ID: 4518C905[0m
+[0;31mE (50169) HTTP_CLIENT: Response: {"detail":{"error":"Card already exists","message":"Thẻ đã tồn tại trong hệ thống","card_id":"4518C905"}}[0m
+[0;31mE (50189) HTTP_CLIENT: ========================================[0m
+[0;32mI (70649) KEYPAD: Key pressed: '2'[0m
+[0;32mI (73889) RFID_NFC: Card ID: 4518C905[0m
+[0;32mI (77779) KEYPAD: Key pressed: '1'[0m
+[0;32mI (78519) KEYPAD: Key pressed: '2'[0m
+[0;32mI (79079) KEYPAD: Key pressed: '3'[0m
+[0;32mI (80199) KEYPAD: Key pressed: '6'[0m
+[0;32mI (81789) KEYPAD: Key pressed: '#'[0m
+[0;32mI (81789) RFID_NFC: Password entered: 1236[0m
+[0;32mI (81789) HTTP_CLIENT: Sending card data: {"id_card":"4518C905","password":"1236"}[0m
+[0;32mI (82109) HTTP_CLIENT: HTTP POST Status = 200, content_length = 161[0m
+[0;32mI (82109) HTTP_CLIENT: Response: {"id_card":"4518C905","password":"1236","updated_at":"2025-11-27T15:30:57.089936","id_student":null,"id":5,"so_du":0.0,"created_at":"2025-11-27T15:30:57.089936"}[0m
+[0;32mI (82119) HTTP_CLIENT: ========================================[0m
+[0;32mI (82129) HTTP_CLIENT: ✓ CARD DATA SENT SUCCESSFULLY![0m
+[0;32mI (82139) HTTP_CLIENT: ========================================[0m
+[0;32mI (82139) HTTP_CLIENT: HTTP_EVENT_DISCONNECTED[0m
+[0;32mI (82149) RFID_NFC: Card data sent successfully[0m
