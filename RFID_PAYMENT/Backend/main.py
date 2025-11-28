@@ -1,4 +1,5 @@
 from fastapi import Depends, FastAPI, HTTPException
+from fastapi.middleware.cors import CORSMiddleware
 from database import SessionLocal
 from datetime import datetime
 from sqlalchemy.orm import Session
@@ -11,6 +12,15 @@ import CRUD, os, requests, asyncio, uvicorn
 Base.metadata.create_all(bind=engine)  
 
 app = FastAPI()
+
+# Cấu hình CORS để frontend có thể gọi API
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=["*"],  # Cho phép tất cả origins (trong production nên chỉ định cụ thể)
+    allow_credentials=True,
+    allow_methods=["*"],  # Cho phép tất cả methods (GET, POST, PUT, DELETE, etc.)
+    allow_headers=["*"],  # Cho phép tất cả headers
+)
 
 SEPAY_API_URL = os.getenv('SEPAY_API_URL')
 API_TOKEN = os.getenv('API_TOKEN') 
@@ -91,6 +101,22 @@ async def get_balance(card_id: str, db: Session = Depends(depend_db)):
     
     return {"balance": account.so_du, "card_id": card_id}
 
+@app.get("/get_balance_by_student/{id_student}")
+async def get_balance_by_student(id_student: str, db: Session = Depends(depend_db)):
+    """Tìm kiếm tài khoản theo MSSV và trả về thông tin số dư"""
+    account = db.query(AccountModel).filter(
+        AccountModel.id_student == id_student
+    ).first()
+    
+    if not account:
+        raise HTTPException(status_code=404, detail="Student ID not found")
+    
+    return {
+        "id_student": account.id_student,
+        "id_card": account.id_card,
+        "balance": account.so_du
+    }
+
 @app.post("/process_payment")
 async def process_payment(data: dict, db: Session = Depends(depend_db)):
     card_id = data.get("id_card")
@@ -117,6 +143,70 @@ async def process_payment(data: dict, db: Session = Depends(depend_db)):
         "status": "success",
         "message": "Payment processed",
         "new_balance": account.so_du
+    }
+
+@app.get("/accounts/no_student_id")
+async def get_accounts_without_student_id(db: Session = Depends(depend_db)):
+    """Lấy danh sách tài khoản chưa có id_student (NULL hoặc empty)"""
+    accounts = db.query(AccountModel).filter(
+        (AccountModel.id_student == None) | (AccountModel.id_student == "")
+    ).all()
+    
+    return {
+        "total": len(accounts),
+        "accounts": [
+            {
+                "id": acc.id,
+                "id_card": acc.id_card,
+                "so_du": acc.so_du,
+                "created_at": acc.created_at.isoformat() if acc.created_at else None
+            }
+            for acc in accounts
+        ]
+    }
+
+@app.post("/update_student_id")
+async def update_student_id(data: dict, db: Session = Depends(depend_db)):
+    """Cập nhật MSSV cho tài khoản sau khi xác thực mật khẩu"""
+    id_card = data.get("id_card")
+    password = data.get("password")
+    id_student = data.get("id_student")
+    
+    if not all([id_card, password, id_student]):
+        raise HTTPException(status_code=400, detail="Missing required fields")
+    
+    # Tìm tài khoản theo ID thẻ
+    account = db.query(AccountModel).filter(
+        AccountModel.id_card == id_card
+    ).first()
+    
+    if not account:
+        raise HTTPException(status_code=404, detail="Card not found")
+    
+    # Kiểm tra mật khẩu
+    if account.password != password:
+        raise HTTPException(status_code=401, detail="Wrong password")
+    
+    # Kiểm tra MSSV đã tồn tại chưa
+    existing = db.query(AccountModel).filter(
+        AccountModel.id_student == id_student,
+        AccountModel.id != account.id
+    ).first()
+    
+    if existing:
+        raise HTTPException(status_code=409, detail="Student ID already exists")
+    
+    # Cập nhật MSSV
+    account.id_student = id_student
+    account.updated_at = datetime.now()
+    db.commit()
+    db.refresh(account)
+    
+    return {
+        "status": "success",
+        "message": "Student ID updated successfully",
+        "id_card": id_card,
+        "id_student": id_student
     }
 
 if __name__ == "__main__":
